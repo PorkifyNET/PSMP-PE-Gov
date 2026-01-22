@@ -1,0 +1,41 @@
+header {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-bottom: 3px solid #ff66fa;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pigflag {
+    flex-shrink: 0;
+}
+
+.pigflag img {
+    height: 80px;
+    width: auto;
+    max-width: 100px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    object-fit: contain;
+}
+
+.domgovtitle h1 {
+    color: #ff66fa;
+    font-size: 28px;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.domgovtitle p {
+    color: #999;
+    font-size: 14px;
+    margin: 5px 0 0 0;
+}
