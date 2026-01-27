@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Piggian Empire - Travel Advisories</title>
+    <link rel="stylesheet" href="topbar.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="nav.css">
+    <style>
+        .travel-filters {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            background-color: #2a2a2a;
+            color: #ccc;
+            border: 1px solid #ff66fa;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-btn:hover {
+            background-color: #ff66fa;
+            color: #1a1a1a;
+        }
+
+        .filter-btn.active {
+            background-color: #ff66fa;
+            color: #1a1a1a;
+        }
+
+        .advisory-card {
+            background-color: #2a2a2a;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            border-left: 5px solid #ff66fa;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .advisory-card.red {
+            border-left-color: #ff3333;
+            background-color: rgba(255, 51, 51, 0.05);
+        }
+
+        .advisory-card.orange {
+            border-left-color: #ff9933;
+            background-color: rgba(255, 153, 51, 0.05);
+        }
+
+        .advisory-card.yellow {
+            border-left-color: #ffcc33;
+            background-color: rgba(255, 204, 51, 0.05);
+        }
+
+        .advisory-card.green {
+            border-left-color: #33cc33;
+            background-color: rgba(51, 204, 51, 0.05);
+        }
+
+        .advisory-level {
+            flex-shrink: 0;
+            width: 100px;
+            text-align: center;
+        }
+
+        .advisory-badge {
+            display: inline-block;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .advisory-badge.red {
+            background-color: #ff3333;
+            color: #fff;
+        }
+
+        .advisory-badge.orange {
+            background-color: #ff9933;
+            color: #fff;
+        }
+
+        .advisory-badge.yellow {
+            background-color: #ffcc33;
+            color: #1a1a1a;
+        }
+
+        .advisory-badge.green {
+            background-color: #33cc33;
+            color: #1a1a1a;
+        }
+
+        .advisory-details {
+            flex: 1;
+        }
+
+        .advisory-details h3 {
+            color: #ff66fa;
+            font-size: 20px;
+            margin: 0 0 8px 0;
+        }
+
+        .advisory-date {
+            color: #888;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .advisory-details p {
+            color: #bbb;
+            line-height: 1.6;
+            margin: 8px 0;
+        }
+
+        .advisory-reasons {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255, 102, 250, 0.2);
+        }
+
+        .advisory-reasons h4 {
+            color: #ff66fa;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 0 0 8px 0;
+        }
+
+        .advisory-reasons ul {
+            margin: 0;
+            padding-left: 20px;
+            color: #aaa;
+            font-size: 13px;
+        }
+
+        .advisory-reasons li {
+            margin-bottom: 4px;
+        }
+
+        .info-box {
+            background-color: #2a2a2a;
+            border: 1px solid #ff66fa;
+            border-radius: 4px;
+            padding: 20px;
+            margin-bottom: 30px;
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .info-box h3 {
+            color: #ff66fa;
+            margin-top: 0;
+        }
+
+        .legend {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .legend-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        .country-selector {
+            background-color: #2a2a2a;
+            border: 1px solid #ff66fa;
+            border-radius: 4px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .country-selector h3 {
+            color: #ff66fa;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .selector-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        #countrySelect {
+            flex: 1;
+            min-width: 250px;
+            padding: 10px 12px;
+            background-color: #1a1a1a;
+            color: #ccc;
+            border: 1px solid #ff66fa;
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #countrySelect:hover {
+            border-color: #ff66fa;
+            box-shadow: 0 0 8px rgba(255, 102, 250, 0.3);
+        }
+
+        #countrySelect:focus {
+            outline: none;
+            border-color: #ff66fa;
+            box-shadow: 0 0 12px rgba(255, 102, 250, 0.5);
+        }
+
+        #countrySelect option {
+            background-color: #1a1a1a;
+            color: #ccc;
+        }
+
+        .view-btn {
+            padding: 10px 20px;
+            background-color: #ff66fa;
+            color: #1a1a1a;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .view-btn:hover {
+            background-color: #ff99ff;
+            transform: translateY(-2px);
+        }
+
+        .view-btn:disabled {
+            background-color: #666;
+            cursor: not-allowed;
+            transform: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <div class="topbar">
+            <span class="pigflag">
+                <img src="./piggian_empire_flag.png">
+            </span>
+            <span class="domgovtitle">
+                <h1>Government of the Piggian Empire</h1>
+                <p>PorkySMP Official Portal</p>
+            </span>
+        </div>
+    </header>
+
+    <div class="flex" style="display: flex; flex-direction: row;">
+        <div class="navigation-sidebar">
+            <a href="index.html">
+                <div class="navitem">
+                    <span class="navitemtext">HOME</span>
+                </div>
+            </a>
+            <a href="government.html">
+                <div class="navitem">
+                    <span class="navitemtext">GOVERNMENT</span>
+                </div>
+            </a>
+            <a href="history.html">
+                <div class="navitem">
+                    <span class="navitemtext">HISTORY</span>
+                </div>
+            </a>
+            <a href="territories.html">
+                <div class="navitem">
+                    <span class="navitemtext">TERRITORIES</span>
+                </div>
+            </a>
+            <a href="laws.html">
+                <div class="navitem">
+                    <span class="navitemtext">LAWS & REGULATIONS</span>
+                </div>
+            </a>
+            <a href="travel.html">
+                <div class="navitem_sel">
+                    <span class="navitemtext">TRAVEL ADVISORIES</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="border">
+            <div class="content1">
+                <h2>Travel Advisories</h2>
+                <p>Official travel advisories for Piggian citizens traveling abroad. These advisories provide guidance for travelers regarding safety, health, and security conditions in destinations outside the Piggian Empire.</p>
+
+                <div class="info-box">
+                    <h3>Advisory Levels Explained</h3>
+                    <p><strong>Level 4 (Red - Do Not Travel):</strong> Travel is strongly discouraged due to serious safety or security concerns.</p>
+                    <p><strong>Level 3 (Orange - Reconsider Travel):</strong> Travel should be reconsidered due to significant risks or ongoing situations.</p>
+                    <p><strong>Level 2 (Yellow - Exercise Caution):</strong> Travelers should exercise increased caution and stay aware of local conditions.</p>
+                    <p><strong>Level 1 (Green - Exercise Normal Precautions):</strong> Normal safety precautions apply. Most destinations are safe for travel.</p>
+                </div>
+
+                <h3>Legend</h3>
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="legend-dot" style="background-color: #33cc33;"></div>
+                        <span>Safe (Level 1)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot" style="background-color: #ffcc33;"></div>
+                        <span>Caution (Level 2)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot" style="background-color: #ff9933;"></div>
+                        <span>Reconsider (Level 3)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot" style="background-color: #ff3333;"></div>
+                        <span>Do Not Travel (Level 4)</span>
+                    </div>
+                </div>
+
+                <h3>Country Advisories</h3>
+
+                <div class="country-selector">
+                    <h3>Select a Country</h3>
+                    <div class="selector-group">
+                        <select id="countrySelect">
+                            <option value="">-- Choose a country --</option>
+                            <option value="armscorp">ArmsCorp</option>
+                            <option value="echelontradingcompany">Echelon Trading Company</option>
+                            <option value="equinoxrealm">Equinox Realm</option>
+                            <option value="followersofthecavern">Followers of the Cavern</option>
+                            <option value="islaporkana">Isla Porkana</option>
+                            <option value="kakotsuki">Kako Tsuki</option>
+                            <option value="kingdomofkyara">Kingdom of Kyara</option>
+                            <option value="margaretthatcher">Margaret Thatcher</option>
+                            <option value="monkeykingdom">Monkey Kingdom</option>
+                            <option value="porkanacanal">Porkana Canal</option>
+                            <option value="ravenholdempire">Ravenhold Empire</option>
+                            <option value="sanctumofcryovale">Sanctum of Cryovale</option>
+                            <option value="thedominion">The Dominion</option>
+                            <option value="therejectedrealm">The Rejected Realm</option>
+                            <option value="worldassembly">The World Assembly</option>
+                            <option value="xantasia">Xantasia</option>
+                        </select>
+                        <button class="view-btn" id="viewBtn" onclick="viewCountry()" disabled>View Details</button>
+                    </div>
+                </div>
+
+                <div class="info-box" style="margin-top: 40px;">
+                    <h3>Need More Information?</h3>
+                    <p>For the most up-to-date information on travel conditions, consult the <a href="government.html" style="color: #ff66fa; text-decoration: none;">Government</a> section or contact the Ministry of Travel and Commerce directly.</p>
+                    <p>Always register with your local embassy before traveling to remote or high-risk areas. Travel insurance is strongly recommended for all international travel.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Handle country selection
+        const countrySelect = document.getElementById('countrySelect');
+        const viewBtn = document.getElementById('viewBtn');
+
+        // Enable/disable button based on selection
+        countrySelect.addEventListener('change', function() {
+            viewBtn.disabled = !this.value;
+        });
+
+        // Navigate to country detail page
+        function viewCountry() {
+            const countryId = countrySelect.value;
+            if (countryId) {
+                window.location.href = `country.html?id=${countryId}`;
+            }
+        }
+
+        // Allow Enter key to trigger navigation
+        countrySelect.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && this.value) {
+                viewCountry();
+            }
+        });
+    </script>

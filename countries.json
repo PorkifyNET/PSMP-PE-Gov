@@ -1,0 +1,283 @@
+{
+  "countries": [
+    {
+      "id": "aland",
+      "name": "Kingdom of Aland",
+      "advisoryLevel": 1,
+      "advisoryColor": "green",
+      "shortDescription": "The Kingdom of Aland is a stable and welcoming destination for Piggian travelers. Well-developed tourist infrastructure, excellent public safety, and strong diplomatic relations make it an ideal destination.",
+      "lastUpdated": "January 15, 2026",
+      "mapImage": "./maps/aland-map.png",
+      "inShort": "Aland is one of the safest destinations for Piggian travelers, with excellent infrastructure and strong bilateral relations with the Piggian Empire. The country welcomes tourists year-round with a well-established tourism industry and reliable public services.",
+      "safetyRisks": {
+        "terrorism": {
+          "level": "Low",
+          "description": "Terrorism is not a significant threat in Aland. The country has strong counter-terrorism measures and an excellent security record."
+        },
+        "criminality": {
+          "level": "Low",
+          "description": "Crime rates are very low, particularly violent crime. Standard urban safety precautions are sufficient."
+        },
+        "naturalDisasters": {
+          "level": "Low",
+          "description": "Aland experiences occasional winter weather but infrastructure is well-maintained. Natural disasters are rare."
+        },
+        "lawsAndCustoms": {
+          "level": "Low",
+          "description": "Aland has familiar legal systems compatible with Piggian law. Travelers should respect local customs and regulations."
+        },
+        "demonstrations": {
+          "level": "Low",
+          "description": "Public demonstrations are rare and generally peaceful when they occur. Tourist areas are not typically affected."
+        }
+      },
+      "emergencyProcedures": {
+        "policeEmergency": "+47 112",
+        "medicalEmergency": "+47 113",
+        "piggianEmbassy": "Embassy of the Piggian Empire, Aland City. Phone: +47 555 1234",
+        "generalAdvice": "Register with your embassy upon arrival. Keep copies of important documents separately from originals."
+      },
+      "travelPreparation": {
+        "insurance": "Travel insurance is recommended but not required. Basic coverage is sufficient.",
+        "documents": "Valid passport required. Visa not needed for Piggian citizens (90-day visa-free stay).",
+        "vaccinations": "No mandatory vaccinations. Standard routine vaccinations recommended.",
+        "medicine": "Modern pharmaceutical system. Bring prescriptions and basic medications.",
+        "luggageRules": "Standard international baggage allowances apply. No restrictions on personal items."
+      },
+      "usefulLinks": [
+        {
+          "title": "Aland Tourism Board",
+          "url": "#"
+        },
+        {
+          "title": "Embassy Information",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "id": "corinth",
+      "name": "Merchant Republic of Corinth",
+      "advisoryLevel": 2,
+      "advisoryColor": "yellow",
+      "shortDescription": "The Merchant Republic remains accessible for travel, but visitors should exercise heightened awareness. Petty crime in urban areas and occasional civil unrest require travelers to stay informed and avoid certain districts.",
+      "lastUpdated": "January 22, 2026",
+      "mapImage": "./maps/corinth-map.png",
+      "inShort": "Corinth is a vibrant trading nation with rich cultural heritage. While generally safe for tourists, visitors should exercise caution in urban areas, particularly at night. The country is worth visiting but requires extra awareness.",
+      "safetyRisks": {
+        "terrorism": {
+          "level": "Low",
+          "description": "Terrorism is not a primary concern. Corinth has adequate security forces in place."
+        },
+        "criminality": {
+          "level": "Moderate",
+          "description": "Petty theft and pickpocketing are common in major cities and crowded areas. Violent crime is rare. Avoid displaying valuables."
+        },
+        "naturalDisasters": {
+          "level": "Low",
+          "description": "Occasional earthquakes and flooding in coastal regions. Buildings generally meet safety standards."
+        },
+        "lawsAndCustoms": {
+          "level": "Low",
+          "description": "Corinth has well-established legal systems. Respect local customs, particularly in religious sites."
+        },
+        "demonstrations": {
+          "level": "Moderate",
+          "description": "Occasional public protests occur. They are usually peaceful but can cause disruptions. Avoid large gatherings."
+        }
+      },
+      "emergencyProcedures": {
+        "policeEmergency": "+51 100",
+        "medicalEmergency": "+51 104",
+        "piggianEmbassy": "Embassy of the Piggian Empire, Corinth City. Phone: +51 555 2345. Consular services available.",
+        "generalAdvice": "Register with the embassy. Avoid political discussions. Keep emergency contact information with you."
+      },
+      "travelPreparation": {
+        "insurance": "Travel insurance strongly recommended, including medical and evacuation coverage.",
+        "documents": "Valid passport required. Visa required for Piggian citizens (obtainable at airport or in advance).",
+        "vaccinations": "Hepatitis A and Typhoid recommended. Standard routine vaccinations advised.",
+        "medicine": "Good medical facilities in major cities. Bring medications in original containers.",
+        "luggageRules": "Standard baggage allowances. Some items restricted; check with airline."
+      },
+      "usefulLinks": [
+        {
+          "title": "Corinth Travel Information",
+          "url": "#"
+        },
+        {
+          "title": "Emergency Contacts",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "id": "valdris",
+      "name": "Free Cities of Valdris",
+      "advisoryLevel": 3,
+      "advisoryColor": "orange",
+      "shortDescription": "The Free Cities are currently experiencing significant political instability and internal conflict. Travel to this region should be carefully reconsidered as the security situation remains unpredictable.",
+      "lastUpdated": "January 18, 2026",
+      "mapImage": "./maps/valdris-map.png",
+      "inShort": "Valdris is experiencing considerable political turmoil with ongoing factional disputes. Travel should be carefully considered and only undertaken by those with essential reasons. The security situation can change rapidly.",
+      "safetyRisks": {
+        "terrorism": {
+          "level": "Moderate",
+          "description": "Political violence and terrorism related to factional conflicts. Attacks can occur with little warning."
+        },
+        "criminality": {
+          "level": "High",
+          "description": "Organized crime and gang violence are significant issues. Armed robbery and violent assault occur regularly. Avoid certain areas entirely."
+        },
+        "naturalDisasters": {
+          "level": "Low",
+          "description": "Natural disasters are not a primary concern, though some regions experience heavy weather."
+        },
+        "lawsAndCustoms": {
+          "level": "High",
+          "description": "Legal authority is fragmented and unreliable. Bribery is common. Enforcement of laws is inconsistent."
+        },
+        "demonstrations": {
+          "level": "High",
+          "description": "Frequent and often violent public demonstrations and civil unrest. Can escalate quickly into armed conflict."
+        }
+      },
+      "emergencyProcedures": {
+        "policeEmergency": "+54 100 (reliability not guaranteed)",
+        "medicalEmergency": "+54 104",
+        "piggianEmbassy": "Embassy of the Piggian Empire, Valdris City. Phone: +54 555 3456. Limited consular services.",
+        "generalAdvice": "Register with embassy immediately. Maintain low profile. Avoid political areas. Have evacuation plan. Monitor news constantly."
+      },
+      "travelPreparation": {
+        "insurance": "Comprehensive travel insurance with evacuation coverage is essential. Standard policies may not cover high-risk areas.",
+        "documents": "Valid passport and travel visa required. Register travel plans with embassy. Consider special travel permits.",
+        "vaccinations": "Hepatitis A, B, Typhoid, Yellow Fever, and routine vaccinations recommended.",
+        "medicine": "Medical facilities are limited and unreliable. Bring comprehensive medical kit and prescription medications.",
+        "luggageRules": "Pack light and secure valuables. Avoid expensive jewelry and electronics."
+      },
+      "usefulLinks": [
+        {
+          "title": "Current Travel Warnings",
+          "url": "#"
+        },
+        {
+          "title": "Medical Resources",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "id": "khast",
+      "name": "Democratic Union of Khast",
+      "advisoryLevel": 4,
+      "advisoryColor": "red",
+      "shortDescription": "The Democratic Union of Khast is currently experiencing active armed conflict. All civilian travel is strictly prohibited due to immediate danger to life. The Piggian embassy has been closed.",
+      "lastUpdated": "January 20, 2026",
+      "mapImage": "./maps/khast-map.png",
+      "inShort": "DO NOT TRAVEL. Khast is currently in a state of armed conflict with active warfare, factional violence, and humanitarian crisis. All borders are closed to civilians. The Piggian government strongly advises against all travel to this country.",
+      "safetyRisks": {
+        "terrorism": {
+          "level": "Critical",
+          "description": "Active terrorist organizations and militant groups operate throughout the country. Attacks on civilians are common."
+        },
+        "criminality": {
+          "level": "Critical",
+          "description": "Warlords and criminal organizations control significant territory. Murder, kidnapping, and violent robbery are endemic."
+        },
+        "naturalDisasters": {
+          "level": "Moderate",
+          "description": "Drought and flooding are concerns, but secondary to armed conflict."
+        },
+        "lawsAndCustoms": {
+          "level": "Critical",
+          "description": "No functioning legal system. No protection for civilians. Arbitrary violence and lawlessness prevail."
+        },
+        "demonstrations": {
+          "level": "Critical",
+          "description": "Armed conflict, not peaceful demonstrations. Active civil war conditions."
+        }
+      },
+      "emergencyProcedures": {
+        "policeEmergency": "No functioning police",
+        "medicalEmergency": "Limited medical services available",
+        "piggianEmbassy": "CLOSED. No Piggian diplomatic presence.",
+        "generalAdvice": "NO TRAVEL. If caught in country, contact neighboring embassy or international organizations. Evacuation may not be possible."
+      },
+      "travelPreparation": {
+        "insurance": "Standard insurance will not cover travel to Khast.",
+        "documents": "Passport not required - travel is prohibited.",
+        "vaccinations": "Not applicable - travel is prohibited.",
+        "medicine": "Not applicable - travel is prohibited.",
+        "luggageRules": "Not applicable - travel is prohibited."
+      },
+      "usefulLinks": [
+        {
+          "title": "Active Travel Warning",
+          "url": "#"
+        },
+        {
+          "title": "Humanitarian Crisis Information",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "id": "solace",
+      "name": "Imperial Federation of Solace",
+      "advisoryLevel": 1,
+      "advisoryColor": "green",
+      "shortDescription": "The Imperial Federation is a premier tourist destination with excellent safety records. Diverse attractions, well-developed infrastructure, and strong diplomatic ties with the Piggian Empire make it a popular choice.",
+      "lastUpdated": "January 24, 2026",
+      "mapImage": "./maps/solace-map.png",
+      "inShort": "Solace is an excellent destination for Piggian travelers seeking diverse experiences. Excellent safety record, world-class infrastructure, and strong cultural ties make it one of the most recommended destinations.",
+      "safetyRisks": {
+        "terrorism": {
+          "level": "Low",
+          "description": "Terrorism is not a significant concern. Solace has excellent counter-terrorism and security services."
+        },
+        "criminality": {
+          "level": "Very Low",
+          "description": "Crime rates are among the lowest in the world. Tourist areas are heavily patrolled and secure."
+        },
+        "naturalDisasters": {
+          "level": "Low",
+          "description": "Occasional severe weather but excellent emergency preparedness and infrastructure. Risk is minimal."
+        },
+        "lawsAndCustoms": {
+          "level": "Low",
+          "description": "Stable legal system with laws similar to Piggian standards. Tourists should respect local customs."
+        },
+        "demonstrations": {
+          "level": "Very Low",
+          "description": "Rare peaceful demonstrations. Tourism areas are never affected. Public order is excellent."
+        }
+      },
+      "emergencyProcedures": {
+        "policeEmergency": "+61 000",
+        "medicalEmergency": "+61 000",
+        "piggianEmbassy": "Embassy of the Piggian Empire, Solace Central. Phone: +61 555 4567. Full consular services available.",
+        "generalAdvice": "Registration with embassy recommended. Excellent emergency services. Keep embassy contact information handy."
+      },
+      "travelPreparation": {
+        "insurance": "Travel insurance recommended for standard coverage (medical, baggage, flight cancellation).",
+        "documents": "Valid passport required. Visa not needed for Piggian citizens (120-day visa-free stay).",
+        "vaccinations": "No mandatory vaccinations. Routine vaccinations recommended.",
+        "medicine": "World-class medical system. Pharmacies readily available. Bring prescriptions if needed.",
+        "luggageRules": "Standard international baggage allowances. No significant restrictions."
+      },
+      "usefulLinks": [
+        {
+          "title": "Solace Tourism Authority",
+          "url": "#"
+        },
+        {
+          "title": "Embassy Services",
+          "url": "#"
+        },
+        {
+          "title": "Cultural Information",
+          "url": "#"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Piggian Empire - Travel Advisory Details</title>
+    <link rel="stylesheet" href="topbar.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="nav.css">
+    <style>
+        .country-header {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            background-color: #2a2a2a;
+            padding: 25px;
+            border-radius: 4px;
+            border-left: 5px solid #ff66fa;
+        }
+
+        .country-header.red {
+            border-left-color: #ff3333;
+            background-color: rgba(255, 51, 51, 0.05);
+        }
+
+        .country-header.orange {
+            border-left-color: #ff9933;
+            background-color: rgba(255, 153, 51, 0.05);
+        }
+
+        .country-header.yellow {
+            border-left-color: #ffcc33;
+            background-color: rgba(255, 204, 51, 0.05);
+        }
+
+        .country-header.green {
+            border-left-color: #33cc33;
+            background-color: rgba(51, 204, 51, 0.05);
+        }
+
+        .country-map {
+            flex-shrink: 0;
+            min-width: 300px;
+        }
+
+        .country-map img {
+            width: 300px;
+            height: auto;
+            border-radius: 4px;
+            border: 2px solid #ff66fa;
+            display: block;
+        }
+
+        .country-info {
+            flex: 1;
+        }
+
+        .country-info h1 {
+            color: #ff66fa;
+            font-size: 32px;
+            margin: 0 0 15px 0;
+        }
+
+        .advisory-badge-large {
+            display: inline-block;
+            padding: 10px 16px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+            margin-right: 10px;
+        }
+
+        .advisory-badge-large.red {
+            background-color: #ff3333;
+            color: #fff;
+        }
+
+        .advisory-badge-large.orange {
+            background-color: #ff9933;
+            color: #fff;
+        }
+
+        .advisory-badge-large.yellow {
+            background-color: #ffcc33;
+            color: #1a1a1a;
+        }
+
+        .advisory-badge-large.green {
+            background-color: #33cc33;
+            color: #1a1a1a;
+        }
+
+        .updated-date {
+            color: #888;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .in-short {
+            color: #ccc;
+            font-size: 15px;
+            line-height: 1.7;
+            font-style: italic;
+            padding: 15px;
+            background-color: rgba(255, 102, 250, 0.1);
+            border-left: 3px solid #ff66fa;
+            border-radius: 2px;
+            margin-top: 15px;
+        }
+
+        .section {
+            background-color: #2a2a2a;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            border-left: 3px solid #ff66fa;
+        }
+
+        .section h3 {
+            color: #ff66fa;
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .risk-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .risk-item {
+            background-color: #1a1a1a;
+            padding: 15px;
+            border-radius: 4px;
+            border-left: 3px solid #ff66fa;
+        }
+
+        .risk-item h4 {
+            color: #ff66fa;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 0 0 8px 0;
+        }
+
+        .risk-level {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 2px;
+            font-weight: 600;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .risk-level.low {
+            background-color: rgba(51, 204, 51, 0.3);
+            color: #33cc33;
+        }
+
+        .risk-level.moderate {
+            background-color: rgba(255, 204, 51, 0.3);
+            color: #ffcc33;
+        }
+
+        .risk-level.high {
+            background-color: rgba(255, 153, 51, 0.3);
+            color: #ff9933;
+        }
+
+        .risk-level.critical {
+            background-color: rgba(255, 51, 51, 0.3);
+            color: #ff3333;
+        }
+
+        .risk-level.very-low {
+            background-color: rgba(51, 204, 51, 0.3);
+            color: #33cc33;
+        }
+
+        .risk-description {
+            color: #bbb;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .prep-section {
+            margin-bottom: 20px;
+        }
+
+        .prep-item h4 {
+            color: #ff66fa;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 0 0 8px 0;
+        }
+
+        .prep-item p {
+            color: #bbb;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .emergency-contact {
+            background-color: #1a1a1a;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-left: 3px solid #ff66fa;
+            border-radius: 2px;
+        }
+
+        .emergency-contact strong {
+            color: #ff66fa;
+            display: block;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .emergency-contact span {
+            color: #ccc;
+            font-family: monospace;
+            font-weight: 600;
+        }
+
+        .links-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .links-list li {
+            margin-bottom: 10px;
+        }
+
+        .links-list a {
+            color: #ff66fa;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .links-list a:hover {
+            color: #fff;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #ff66fa;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .country-header {
+                flex-direction: column;
+            }
+
+            .country-map {
+                min-width: auto;
+                width: 100%;
+            }
+
+            .country-map img {
+                width: 100%;
+            }
+
+            .risk-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="topbar">
+            <span class="pigflag">
+                <img src="./piggian_empire_flag.png">
+            </span>
+            <span class="domgovtitle">
+                <h1>Government of the Piggian Empire</h1>
+                <p>PorkySMP Official Portal</p>
+            </span>
+        </div>
+    </header>
+
+    <div class="flex" style="display: flex; flex-direction: row;">
+        <div class="navigation-sidebar">
+            <a href="index.html">
+                <div class="navitem">
+                    <span class="navitemtext">HOME</span>
+                </div>
+            </a>
+            <a href="government.html">
+                <div class="navitem">
+                    <span class="navitemtext">GOVERNMENT</span>
+                </div>
+            </a>
+            <a href="history.html">
+                <div class="navitem">
+                    <span class="navitemtext">HISTORY</span>
+                </div>
+            </a>
+            <a href="territories.html">
+                <div class="navitem">
+                    <span class="navitemtext">TERRITORIES</span>
+                </div>
+            </a>
+            <a href="laws.html">
+                <div class="navitem">
+                    <span class="navitemtext">LAWS & REGULATIONS</span>
+                </div>
+            </a>
+            <a href="travel.html">
+                <div class="navitem_sel">
+                    <span class="navitemtext">TRAVEL ADVISORIES</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="border">
+            <div class="content1">
+                <a href="travel.html" class="back-link">← Back to Travel Advisories</a>
+
+                <div id="country-content">
+                    <p style="color: #ccc;">Loading country information...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Country data embedded directly for static hosting compatibility - ALL 16 COUNTRIES
+        const countriesData = {
+  "countries": [
+    {
+      "id": "armscorp",
+      "name": "ArmsCorp",
+      "advisoryLevel": 2,
+      "advisoryColor": "yellow",
+      "shortDescription": "ArmsCorp is a stable and welcoming destination for Piggian travelers.",
+      "lastUpdated": "January 27, 2026",
+      "mapImage": "",
+      "inShort": "ArmsCorp is a relatively new country of which we have not been able to establish full diplomatic relations.",
+      "safetyRisks": {
+        "terrorism": {"level": "Low", "description": "Terrorism doesn't seem to pose a significant threat."},
+        "criminality": {"level": "Low", "description": "Crime rates seem very low. Standard safety precautions should be sufficient."},
+        "naturalDisasters": {"level": "Low", "description": "Disasters are rare."},
+        "lawsAndCustoms": {"level": "Moderate", "description": "We are still learning about local customs and laws."},
+        "demonstrations": {"level": "Low", "description": "Demonstrations seem to be non-existent."}
+      },
+      "emergencyProcedures": {
+        "policeEmergency": "Unknown",
+        "medicalEmergency": "Unknown",
+        "piggianEmbassy": "The Piggian Empire does not have an embassy in ArmsCorp and therefore cannot help you if you encounter any issues.",
+        "generalAdvice": "No general advice available."
+      },
+      "travelPreparation": {
+        "insurance": "Recommended and required.",
+        "documents": "Valid passport required. Visa required.",
+        "vaccinations": "No mandatory vaccinations.",
+        "medicine": "We do not have any information about the pharmaceutical system.",
+        "luggageRules": "Standard international baggage allowances."
+      },
+    //   "usefulLinks": [{"title": "Tourism Information", "url": "#"}, {"title": "Embassy Information", "url": "#"}]
+    },
+    {
+      "id": "echelontradingcompany",
+      "name": "Echelon Trading Company",
+      "advisoryLevel": 2,
+      "advisoryColor": "yellow",
+      "shortDescription": "A vibrant commercial hub. Exercise caution in busy market areas.",
+      "lastUpdated": "January 27, 2026",
+      "mapImage": "./maps/EchelonTradingCompany.png",
+      "inShort": "Echelon Trading Company is a vibrant trading hub with rich heritage. Generally safe but requires awareness in crowded areas.",
+      "safetyRisks": {
+        "terrorism": {"level": "Low", "description": "Not a primary concern. Adequate security forces in place."},
+        "criminality": {"level": "Moderate", "description": "Petty theft in crowded areas. Violent crime is rare."},
+        "naturalDisasters": {"level": "Low", "description": "Occasional weather events. Infrastructure meets safety standards."},
+        "lawsAndCustoms": {"level": "Low", "description": "Well-established legal systems."},
+        "demonstrations": {"level": "Low", "description": "Demonstrations are rare and usually peaceful."}
+      },
+      "emergencyProcedures": {
+        "policeEmergency": "+2 100",
+        "medicalEmergency": "+2 104",
+        "piggianEmbassy": "The Piggian Empire does not have an embassy in Echelon Trading Company and therefore cannot help you if you encounter any issues.",
+        "generalAdvice": "Avoid political discussions."
+      },
+      "travelPreparation": {
+        "insurance": "Recommended with medical coverage.",
+        "documents": "Valid passport required. Visa required (obtainable at airport).",
+        "vaccinations": "No mandatory vaccinations.",
+        "medicine": "Good medical facilities.",
+        "luggageRules": "Standard baggage allowances apply."
+      },
+      "usefulLinks": [{"title": "Trade Information", "url": "#"}, {"title": "Emergency Contacts", "url": "#"}]
+    },
+    {
+      "id": "equinoxrealm",
+      "name": "Equinox Realm",
+      "advisoryLevel": 2,
+      "advisoryColor": "yellow",
+      "shortDescription": "Unique geography and culture. Plan carefully for local conditions.",
+      "lastUpdated": "January 27, 2026",
+      "mapImage": "",
+      "inShort": "Equinox Realm offers unique experiences. Travel requires careful planning and awareness of local conditions.",
+      "safetyRisks": {
+        "terrorism": {"level": "Low", "description": "Not a primary concern. Adequate security forces."},
+        "criminality": {"level": "Low", "description": "Relatively low crime rates."},
+        "naturalDisasters": {"level": "Moderate", "description": "Seasonal phenomena. Well-maintained infrastructure."},
+        "lawsAndCustoms": {"level": "Low", "description": "Well-established legal systems."},
+        "demonstrations": {"level": "Low", "description": "Rare and generally peaceful."}
+      },
+      "emergencyProcedures": {
+        "policeEmergency": "+3 100",
+        "medicalEmergency": "+3 104",
+        "piggianEmbassy": "The Piggian Empire does not have an embassy in Equinox Realm and therefore cannot help you if you encounter any issues.",
+        "generalAdvice": "Register with embassy. Monitor seasonal advisories."
+      },
+      "travelPreparation": {
+        "insurance": "Recommended with natural event coverage.",
+        "documents": "Valid passport required. Visa required.",
+        "vaccinations": "Standard routine vaccinations.",
+        "medicine": "Good medical facilities available.",
+        "luggageRules": "Pack for seasonal weather conditions."
+      },
+      "usefulLinks": [{"title": "Travel Information", "url": "#"}, {"title": "Seasonal Advisories", "url": "#"}]
+    },
+    {
+      "id": "followersofthecavern",
+      "name": "Followers of the Cavern",
+      "advisoryLevel": 2,
+      "advisoryColor": "yellow",
+      "shortDescription": "Unique underground culture. Exercise caution when exploring.",
+      "lastUpdated": "January 27, 2026",
+      "mapImage": "",
+      "inShort": "Followers of the Cavern offers distinctive cultural experiences. Underground exploration requires proper preparation.",
+      "safetyRisks": {
+        "terrorism": {"level": "Low", "description": "Not a primary concern."},
+        "criminality": {"level": "Low", "description": "Generally safe communities."},
+        "naturalDisasters": {"level": "Moderate", "description": "Geological considerations. Infrastructure is maintained."},
+        "lawsAndCustoms": {"level": "Moderate", "description": "Unique customs. Respect local traditions."},
+        "demonstrations": {"level": "Low", "description": "Rare occurrences."}
+      },
+      "emergencyProcedures": {
+        "policeEmergency": "+4 100",
+        "medicalEmergency": "+4 104",
+        "piggianEmbassy": "The Piggian Empire does not have an embassy in Followers of the Cavern and therefore cannot help you if you encounter any issues.",
+        "generalAdvice": "Follow local guides when exploring."
+      },
+      "travelPreparation": {
+        "insurance": "Recommended for adventure activities.",
+        "documents": "Valid passport required. Visa required.",
+        "vaccinations": "Standard routine vaccinations.",
+        "medicine": "Basic medical facilities. Bring medications.",
+        "luggageRules": "Pack sturdy footwear for exploration."
+      },
+      "usefulLinks": [{"title": "Cultural Guides", "url": "#"}, {"title": "Exploration Information", "url": "#"}]
+    },
+    {
+      "id": "islaporkana",
+      "name": "Isla Porkana",
+      "advisoryLevel": 1,
+      "advisoryColor": "green",
+      "shortDescription": "Premier tourist destination with excellent safety records.",
+      "lastUpdated": "January 27, 2026",
+      "mapImage": "./maps/IslaPorkana.png",
+      "inShort": "Isla Porkana is an excellent domestic destination for relaxation and natural beauty. Excellent safety record.",
+      "safetyRisks": {
+        "terrorism": {"level": "Low", "description": "Not a significant concern. Excellent counter-terrorism services."},
+        "criminality": {"level": "Low", "description": "Among the lowest crime rates. Tourist areas heavily patrolled."},
+        "naturalDisasters": {"level": "Low", "description": "Excellent emergency preparedness. Risk is minimal."},
+        "lawsAndCustoms": {"level": "Low", "description": "Stable legal system similar to Piggian standards."},
+        "demonstrations": {"level": "Low", "description": "Rare peaceful demonstrations. Tourism areas unaffected."}
+      },
+      "emergencyProcedures": {
+        "policeEmergency": "+5 911",
+        "medicalEmergency": "+5 911",
+        "piggianEmbassy": "The Colonial House, Isla Porkana. Phone: +5 555 5678. Full consular services.",
+        "generalAdvice": "Excellent emergency services available."
+      },
+      "travelPreparation": {
+        "insurance": "Recommended for standard coverage.",
+        "documents": "Part of Piggian Entente: No passport or visa required.",
+        "vaccinations": "No mandatory vaccinations.",
+        "medicine": "World-class medical system. Pharmacies available.",
+        "luggageRules": "Baggage allowances varies by carrier."
+      },
+      "usefulLinks": [{"title": "Tourism Authority", "url": "#"}, {"title": "Embassy Services", "url": "#"}, {"title": "Island Information", "url": "#"}]
+    },
+    {
+      "id": "kakotsuki",
+      "name": "Kako Tsuki",
+      "advisoryLevel": 2,
+      "advisoryColor": "yellow",
+      "shortDescription": "Culturally rich destination for travelers.",
+      "lastUpdated": "January 27, 2026",
+      "mapImage": "./maps/KakoTsuki.png",
+      "inShort": "Kako Tsuki is one of the leading countries in redstone engineering. Excellent infrastructure.",
+      "safetyRisks": {
+        "terrorism": {"level": "Moderate", "description": "Monkey collaborators have been seen in Kako Tsuki. Do not approach suspicious individuals."},
+        "criminality": {"level": "Low", "description": "Low crime rates."},
+        "naturalDisasters": {"level": "Low", "description": "Well-maintained infrastructure."},
+        "lawsAndCustoms": {"level": "Moderate", "description": "The Kako Tsukian government is known to collaborate with Monkey Kingdom authorities. Exercise caution."},
+        "demonstrations": {"level": "Low", "description": "Demonstrations are rare."}
+      },
+      "emergencyProcedures": {
+        "policeEmergency": "+6 110",
+        "medicalEmergency": "+6 119",
+        "piggianEmbassy": "The Piggian Empire does not have an embassy in Kako Tsuki and therefore cannot help you if you encounter any issues.",
+        "generalAdvice": "No general advice available."
+      },
+      "travelPreparation": {
+        "insurance": "Recommended with standard coverage.",
+        "documents": "Valid passport required. Visa not needed (90-day visa-free).",
+        "vaccinations": "No mandatory vaccinations.",
+        "medicine": "Excellent pharmaceutical system.",
+        "luggageRules": "Standard international baggage allowances."
+      },
+      "usefulLinks": [{"title": "Cultural Information", "url": "#"}, {"title": "Tourism Board", "url": "#"}]
+    },
+    {
+      "id": "kingdomofkyara",
+      "name": "Kingdom of Kyara",
+      "advisoryLevel": 1,
+      "advisoryColor": "green",
+      "shortDescription": "Stable kingdom with strong governance and tourist infrastructure.",
+      "lastUpdated": "January 27, 2026",
+      "mapImage": "./maps/KingdomOfKyara.png",
+      "inShort": "Kingdom of Kyara is a stable and welcoming destination. Strong governance and excellent tourist infrastructure.",
+      "safetyRisks": {
+        "terrorism": {"level": "Low", "description": "Not a concern. Strong security measures."},
+        "criminality": {"level": "Low", "description": "Low crime rates in tourist areas."},
+        "naturalDisasters": {"level": "Low", "description": "Well-managed infrastructure."},
+        "lawsAndCustoms": {"level": "Low", "description": "Laws are extremely similar to those of the Piggian Empire. Respect royal customs and traditions."},
+        "demonstrations": {"level": "Low", "description": "Non-existent."}
+      },
+      "emergencyProcedures": {
+        "policeEmergency": "+7 999",
+        "medicalEmergency": "+7 999",
+        "piggianEmbassy": "Embassy of the Piggian Empire, Kyara City. Phone: +7 555 7890",
+        "generalAdvice": "Be respectful of royal customs."
+      },
+      "travelPreparation": {
+        "insurance": "Recommended for standard coverage.",
+        "documents": "Valid passport required. Visa not needed (120-day visa-free).",
+        "vaccinations": "No mandatory vaccinations.",
+        "medicine": "Good medical facilities.",
+        "luggageRules": "Standard baggage allowances."
+      },
+      "usefulLinks": [{"title": "Royal Palace Tours", "url": "#"}, {"title": "Embassy Information", "url": "#"}]
+    },
+    {
+      "id": "margaretthatcher",
+      "name": "Margaret Thatcher",
+      "advisoryLevel": 3,
+      "advisoryColor": "orange",
+      "shortDescription": "New and undeveloped island.",
+      "lastUpdated": "January 27, 2026",
+      "mapImage": "",
+      "inShort": "Margaret Thatcher is an undeveloped island.",
+      "safetyRisks": {
+        "terrorism": {"level": "Low", "description": "Not a significant threat."},
+        "criminality": {"level": "Low", "description": "Low crime rate."},
+        "naturalDisasters": {"level": "High", "description": "Infrastructure is close to non-existent."},
+        "lawsAndCustoms": {"level": "Moderate", "description": "Laws and customs are unknown."},
+        "demonstrations": {"level": "Low", "description": "Non-existent."}
+      },
+      "emergencyProcedures": {
+        "policeEmergency": "None, no local law enforcement.",
+        "medicalEmergency": "None, no local medical services.",
+        "piggianEmbassy": "The Piggian Empire does not have an embassy in Margaret Thatcher and therefore cannot help you if you encounter any issues.",
+        "generalAdvice": "Do not travel to Margaret Thatcher due to lack of infrastructure."
+      },
+      "travelPreparation": {
+        "insurance": "Recommended with extensive coverage.",
+        "documents": "Documents cannot be verified due to lack of governance.",
+        "vaccinations": "No mandatory vaccinations.",
+        "medicine": "Non-existent medical facilities.",
+        "luggageRules": "Unknown due to lack of infrastructure."
+      },
+      // "usefulLinks": [{"title": "Regional Information", "url": "#"}, {"title": "Embassy Services", "url": "#"}]
+    },
+    {
+      "id": "monkeykingdom",
+      "name": "Monkey Kingdom",
+      "advisoryLevel": 3,
+      "advisoryColor": "orange",
+      "shortDescription": "Rapidly developing nation, but is known to fight offensive wars.",
+      "lastUpdated": "January 27, 2026",
+      "mapImage": "./maps/MonkeyKingdom.png",
+      "inShort": "The Monkey Kingdom is a rapidly developing nation known for its rich biodiversity and unique wildlife. However, travelers should be aware of certain safety considerations due to the country's evolving infrastructure and occasional conflicts.",
+      "safetyRisks": {
+        "terrorism": {"level": "High", "description": "Random attacks on tourists are possible."},
+        "criminality": {"level": "Moderate", "description": "Do not show valuables in public."},
+        "naturalDisasters": {"level": "Low", "description": "The countryside might be dangerous. Rescue services are limited."},
+        "lawsAndCustoms": {"level": "Moderate", "description": "Monkey Kingdom laws can be strict. Respect local customs."},
+        "demonstrations": {"level": "Moderate", "description": "Outlawed but may occur occasionally."}
+      },
+      "emergencyProcedures": {
+        "policeEmergency": "Unknown",
+        "medicalEmergency": "Unknown",
+        "piggianEmbassy": "The Piggian Empire does not have an embassy in Monkey Kingdom and therefore cannot help you if you encounter any issues.",
+        "generalAdvice": "Avoid traveling alone. Stay in well-populated areas."
+      },
+      "travelPreparation": {
+        "insurance": "Highly recommended with comprehensive coverage. Insurance providers may have limited options for coverage in Monkey Kingdom.",
+        "documents": "Valid passport required. Visa is required.",
+        "vaccinations": "Standard routine vaccinations.",
+        "medicine": "Basic medical facilities. Bring supplies.",
+        "luggageRules": "Pack appropriate outdoor gear."
+      },
+      // "usefulLinks": [{"title": "Wildlife Information", "url": "#"}, {"title": "Nature Tours", "url": "#"}]
+    },
+    {
+      "id": "porkanacanal",
+      "name": "Porkana Canal",
+      "advisoryLevel": 1,
+      "advisoryColor": "green",
+      "shortDescription": "Important trade infrastructure for the Piggian Empire with excellent security and facilities.",
+      "lastUpdated": "January 27, 2026",
+      "mapImage": "./maps/PorkanaCanal.png",
+      "inShort": "Porkana Canal is a major trade corridor which connects the Piggian Empire to the global oceans. Excellent facilities and strong security throughout.",
+      "safetyRisks": {
+        "terrorism": {"level": "Low", "description": "Strong security measures in place, but terrorism remains a potential risk."},
+        "criminality": {"level": "Low", "description": "Well-patrolled and secure."},
+        "naturalDisasters": {"level": "Low", "description": "Modern infrastructure and preparedness."},
+        "lawsAndCustoms": {"level": "Low", "description": "Laws are stricter than in the Piggian Empire due to maritime regulations."},
+        "demonstrations": {"level": "Low", "description": "Rare."}
+      },
+      "emergencyProcedures": {
+        "policeEmergency": "+10 911",
+        "medicalEmergency": "+10 911",
+        "piggianEmbassy": "Canal Authority - Piggian Office. Phone: +10 555 0123",
+        "generalAdvice": "Follow maritime regulations. Register vessels."
+      },
+      "travelPreparation": {
+        "insurance": "Marine insurance recommended.",
+        "documents": "Part of Piggian Entente: Passport and visa not required.",
+        "vaccinations": "No mandatory vaccinations.",
+        "medicine": "Modern medical facilities.",
+        "luggageRules": "Maritime baggage regulations apply."
+      },
+      "usefulLinks": [{"title": "Canal Authority", "url": "#"}, {"title": "Maritime Information", "url": "#"}]
+    },
+    {
+      "id": "ravenholdempire",
+      "name": "Ravenhold Empire",
+      "advisoryLevel": 2,
+      "advisoryColor": "yellow",
+      "shortDescription": "Historical empire. Some areas require heightened awareness.",
+      "lastUpdated": "January 27, 2026",
+      "mapImage": "./maps/RavenholdEmpire.png",
+      "inShort": "Ravenhold Empire offers rich history and culture. Most areas are safe with reasonable precautions.",
+      "safetyRisks": {
+        "terrorism": {"level": "Moderate", "description": "Occasional threats of Monkey Kingdom sympathizers in the capital."},
+        "criminality": {"level": "Low", "description": "Crime rates are low in tourist areas."},
+        "naturalDisasters": {"level": "Low", "description": "Generally stable."},
+        "lawsAndCustoms": {"level": "Moderate", "description": "The Royal Family has been unstable recently. Exercise caution."},
+        "demonstrations": {"level": "Low", "description": "Occasional but usually peaceful."}
+      },
+      "emergencyProcedures": {
+        "policeEmergency": "+11 911",
+        "medicalEmergency": "+11 911",
+        "piggianEmbassy": "Embassy of the Piggian Empire, Ravenhold Capital. Phone: +11 555 1234",
+        "generalAdvice": "Be aware in crowded areas. Respect historical sites."
+      },
+      "travelPreparation": {
+        "insurance": "Recommended with coverage.",
+        "documents": "Valid passport required. Visa may be required.",
+        "vaccinations": "Standard routine vaccinations.",
+        "medicine": "Good medical facilities.",
+        "luggageRules": "Standard baggage allowances."
+      },
+      "usefulLinks": [{"title": "Historical Sites", "url": "#"}, {"title": "Empire Information", "url": "#"}]
+    },
+    {
+      "id": "sanctumofcryovale",
+      "name": "Sanctum of Cryovale",
+      "advisoryLevel": 2,
+      "advisoryColor": "yellow",
+      "shortDescription": "Cold climate sanctuary. Prepare for extreme weather conditions.",
+      "lastUpdated": "January 27, 2026",
+      "mapImage": "",
+      "inShort": "Sanctum of Cryovale is a unique cold-climate destination. Exceptional experiences require proper weather preparation.",
+      "safetyRisks": {
+        "terrorism": {"level": "Low", "description": "Not a concern."},
+        "criminality": {"level": "Low", "description": "Generally safe."},
+        "naturalDisasters": {"level": "High", "description": "Extreme weather hazards. Prepare accordingly."},
+        "lawsAndCustoms": {"level": "Moderate", "description": "Laws may be stricter than in the Piggian Empire, especially regarding LGBTQ+ issues."},
+        "demonstrations": {"level": "Low", "description": "Rare."}
+      },
+      "emergencyProcedures": {
+        "policeEmergency": "+12 911",
+        "medicalEmergency": "+12 911",
+        "piggianEmbassy": "The Piggian Empire does not have an embassy in Sanctum of Cryovale and therefore cannot help you if you encounter any issues.",
+        "generalAdvice": "Prepare for extreme cold. Follow weather warnings."
+      },
+      "travelPreparation": {
+        "insurance": "Essential with cold-weather coverage.",
+        "documents": "Valid passport and visa required.",
+        "vaccinations": "Standard vaccinations recommended.",
+        "medicine": "Bring cold-weather medications.",
+        "luggageRules": "Pack heavy winter gear and supplies."
+      },
+      "usefulLinks": [{"title": "Weather Information", "url": "#"}, {"title": "Cold-Climate Guides", "url": "#"}]
+    },
+    {
+      "id": "thedominion",
+      "name": "The Dominion",
+      "advisoryLevel": 2,
+      "advisoryColor": "yellow",
+      "shortDescription": "Rapidly developing nation with a complex political system.",
+      "lastUpdated": "January 27, 2026",
+      "mapImage": "./maps/TheDominion.png",
+      "inShort": "The Dominion is experiencing political complexity. Educate yourself before traveling.",
+      "safetyRisks": {
+        "terrorism": {"level": "Moderate", "description": "Tensions with the Monkey Kingdom remain high. Stay informed."},
+        "criminality": {"level": "Low", "description": "Crimes rarely target tourists."},
+        "naturalDisasters": {"level": "Low", "description": "Generally stable geographically."},
+        "lawsAndCustoms": {"level": "Moderate", "description": "Dominion laws can be strict. Respect local customs."},
+        "demonstrations": {"level": "Moderate", "description": "Occasional protests. Avoid gatherings."}
+      },
+      "emergencyProcedures": {
+        "policeEmergency": "+13 100",
+        "medicalEmergency": "+13 104",
+        "piggianEmbassy": "Embassy of the Piggian Empire, Dominion Center. Phone: +13 555 3456. Limited services.",
+        "generalAdvice": "Register with embassy. Monitor political situation."
+      },
+      "travelPreparation": {
+        "insurance": "Recommended insurance coverage.",
+        "documents": "Valid passport required. Visa may be required.",
+        "vaccinations": "Standard vaccinations recommended.",
+        "medicine": "Medical facilities are developing. Bring necessary medications.",
+        "luggageRules": "Avoid political items."
+      },
+      "usefulLinks": [{"title": "Dominion Government", "url": "https://utils.bleached.dev/porkySMP/dominiongov/index.html"}]
+    },
+    {
+      "id": "therejectedrealm",
+      "name": "The Rejected Realm",
+      "advisoryLevel": 4,
+      "advisoryColor": "red",
+      "shortDescription": "Unstable anarchist region. Reconsider travel plans carefully.",
+      "lastUpdated": "January 27, 2026",
+      "mapImage": "",
+      "inShort": "The Rejected Realm is experiencing extreme instability. Do not travel.",
+      "safetyRisks": {
+        "terrorism": {"level": "High", "description": "Increased risk. Be very cautious."},
+        "criminality": {"level": "High", "description": "Significant crime concerns."},
+        "naturalDisasters": {"level": "Moderate", "description": "Some natural hazards."},
+        "lawsAndCustoms": {"level": "High", "description": "Unstable governance."},
+        "demonstrations": {"level": "High", "description": "Frequent civil unrest."}
+      },
+      "emergencyProcedures": {
+        "policeEmergency": "Not available",
+        "medicalEmergency": "Not available",
+        "piggianEmbassy": "The Piggian Empire does not have an embassy in The Rejected Realm and therefore cannot help you if you encounter any issues.",
+        "generalAdvice": "Have evacuation plan."
+      },
+      "travelPreparation": {
+        "insurance": "Essential with comprehensive coverage.",
+        "documents": "Valid passport and visa. Register plans.",
+        "vaccinations": "Multiple vaccinations recommended.",
+        "medicine": "Bring comprehensive medical kit.",
+        "luggageRules": "Pack only essentials. Avoid valuables."
+      },
+      "usefulLinks": [{"title": "Active Warnings", "url": "#"}, {"title": "Evacuation Information", "url": "#"}]
+    },
+    {
+      "id": "worldassembly",
+      "name": "The World Assembly",
+      "advisoryLevel": 1,
+      "advisoryColor": "green",
+      "shortDescription": "International hub with excellent security and facilities.",
+      "lastUpdated": "January 27, 2026",
+      "mapImage": "./maps/WorldAssembly.png",
+      "inShort": "The World Assembly is a neutral international hub. Excellent facilities and comprehensive security throughout.",
+      "safetyRisks": {
+        "terrorism": {"level": "Low", "description": "Excellent security measures."},
+        "criminality": {"level": "Low", "description": "Heavily secured areas."},
+        "naturalDisasters": {"level": "Low", "description": "Modern preparedness."},
+        "lawsAndCustoms": {"level": "Low", "description": "International protocols respected."},
+        "demonstrations": {"level": "Low", "description": "Highly regulated."}
+      },
+      "emergencyProcedures": {
+        "policeEmergency": "+15 911",
+        "medicalEmergency": "+15 911",
+        "piggianEmbassy": "Piggian Delegation, World Assembly. Phone: +15 555 5678. Full services.",
+        "generalAdvice": "Excellent international assistance available."
+      },
+      "travelPreparation": {
+        "insurance": "Standard coverage sufficient.",
+        "documents": "Valid passport required. No visa required.",
+        "vaccinations": "No mandatory vaccinations but basic vaccines recommended.",
+        "medicine": "World-class facilities.",
+        "luggageRules": "Standard international allowances."
+      },
+      "usefulLinks": [{"title": "Assembly Information", "url": "#"}, {"title": "Delegation Services", "url": "#"}]
+    },
+    {
+      "id": "xantasia",
+      "name": "Xantasia",
+      "advisoryLevel": 1,
+      "advisoryColor": "green",
+      "shortDescription": "Exotic and peaceful destination with strong tourist infrastructure.",
+      "lastUpdated": "January 27, 2026",
+      "mapImage": "",
+      "inShort": "Xantasia is an exotic and peaceful destination. Perfect for travelers seeking adventure with safety.",
+      "safetyRisks": {
+        "terrorism": {"level": "Low", "description": "Not a concern. Strong security."},
+        "criminality": {"level": "Low", "description": "Very safe for tourists."},
+        "naturalDisasters": {"level": "Low", "description": "Well-prepared infrastructure."},
+        "lawsAndCustoms": {"level": "Low", "description": "Welcoming and respectful."},
+        "demonstrations": {"level": "Very Low", "description": "Extremely rare."}
+      },
+      "emergencyProcedures": {
+        "policeEmergency": "+16 911",
+        "medicalEmergency": "+16 911",
+        "piggianEmbassy": "The Piggian Empire does not have an embassy in Xantasia and therefore cannot help you if you encounter any issues.",
+        "generalAdvice": "Excellent emergency services available."
+      },
+      "travelPreparation": {
+        "insurance": "Recommended for standard coverage.",
+        "documents": "Valid passport and visa required.",
+        "vaccinations": "No mandatory vaccinations but basic vaccines recommended.",
+        "medicine": "Excellent medical system.",
+        "luggageRules": "Standard international baggage allowances."
+      },
+      // "usefulLinks": [{"title": "Tourism Authority", "url": "#"}, {"title": "Embassy Services", "url": "#"}]
+    }
+  ]
+};
+
+        // Get country ID from URL parameters
+        const params = new URLSearchParams(window.location.search);
+        const countryId = params.get('id');
+
+        // Load and display country data
+        function loadCountryData() {
+            try {
+                // Find the country by ID
+                const country = countriesData.countries.find(c => c.id === countryId);
+                
+                if (!country) {
+                    document.getElementById('country-content').innerHTML = '<p style="color: #ff3333;">Country not found. <a href="travel.html" style="color: #ff66fa;">Return to advisories</a></p>';
+                    return;
+                }
+
+                // Display country information
+                displayCountry(country);
+            } catch (error) {
+                console.error('Error loading country data:', error);
+                document.getElementById('country-content').innerHTML = `<p style="color: #ff3333;">Error loading country information: ${error.message}</p><p style="color: #ccc; margin-top: 20px;"><a href="travel.html" style="color: #ff66fa;">Return to advisories</a></p>`;
+            }
+        }
+
+        function displayCountry(country) {
+            const advisoryLevelNames = ['', 'Exercise Normal Precautions', 'Exercise Caution', 'Reconsider Travel', 'Do Not Travel'];
+            
+            let html = `
+                <div class="country-header ${country.advisoryColor}">
+                    <div class="country-map">
+                        <img src="${country.mapImage}" alt="Map of ${country.name}" onerror="this.style.display='none';">
+                    </div>
+                    <div class="country-info">
+                        <h1>${country.name}</h1>
+                        <div class="advisory-badge-large ${country.advisoryColor}">Level ${country.advisoryLevel} - ${advisoryLevelNames[country.advisoryLevel]}</div>
+                        <span class="updated-date">Last Updated: ${country.lastUpdated}</span>
+                        <div class="in-short">${country.inShort}</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>Safety Risks</h3>
+                    <div class="risk-grid">
+            `;
+
+            // Add safety risks
+            Object.entries(country.safetyRisks).forEach(([key, risk]) => {
+                const levelClass = risk.level.toLowerCase().replace(' ', '-');
+                html += `
+                    <div class="risk-item">
+                        <h4>${key.replace(/([A-Z])/g, ' $1').trim()}</h4>
+                        <span class="risk-level ${levelClass}">${risk.level}</span>
+                        <p class="risk-description">${risk.description}</p>
+                    </div>
+                `;
+            });
+
+            html += `
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>Emergency Procedures</h3>
+            `;
+
+            // Add emergency procedures
+            const procedures = country.emergencyProcedures;
+            if (procedures.policeEmergency) {
+                html += `
+                    <div class="emergency-contact">
+                        <strong>Police Emergency</strong>
+                        <span>${procedures.policeEmergency}</span>
+                    </div>
+                `;
+            }
+            if (procedures.medicalEmergency) {
+                html += `
+                    <div class="emergency-contact">
+                        <strong>Medical Emergency</strong>
+                        <span>${procedures.medicalEmergency}</span>
+                    </div>
+                `;
+            }
+            if (procedures.piggianEmbassy) {
+                html += `
+                    <div class="emergency-contact">
+                        <strong>Piggian Embassy</strong>
+                        <span>${procedures.piggianEmbassy}</span>
+                    </div>
+                `;
+            }
+            if (procedures.generalAdvice) {
+                html += `
+                    <div style="background-color: #1a1a1a; padding: 15px; border-left: 3px solid #ff66fa; border-radius: 2px;">
+                        <strong style="color: #ff66fa; display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">General Advice</strong>
+                        <p style="color: #bbb; margin: 0; line-height: 1.6;">${procedures.generalAdvice}</p>
+                    </div>
+                `;
+            }
+
+            html += `
+                </div>
+
+                <div class="section">
+                    <h3>Travel Preparation</h3>
+            `;
+
+            // Add travel preparation
+            const prep = country.travelPreparation;
+            Object.entries(prep).forEach(([key, value]) => {
+                const label = key.replace(/([A-Z])/g, ' $1').trim();
+                html += `
+                    <div class="prep-section">
+                        <div class="prep-item">
+                            <h4>${label}</h4>
+                            <p>${value}</p>
+                        </div>
+                    </div>
+                `;
+            });
+
+            html += `
+                </div>
+            `;
+
+            // Add useful links if available
+            if (country.usefulLinks && country.usefulLinks.length > 0) {
+                html += `
+                    <div class="section">
+                        <h3>Useful Links</h3>
+                        <ul class="links-list">
+                `;
+                country.usefulLinks.forEach(link => {
+                    html += `<li><a href="${link.url}">${link.title}</a></li>`;
+                });
+                html += `
+                        </ul>
+                    </div>
+                `;
+            }
+
+            document.getElementById('country-content').innerHTML = html;
+            document.title = `Piggian Empire - Travel Advisory: ${country.name}`;
+        }
+
+        // Load data when page loads
+        loadCountryData();
+    </script>
+</body>
+
+</html>
