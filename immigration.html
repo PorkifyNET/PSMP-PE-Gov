@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Piggian Empire - Immigration</title>
+    <link rel="stylesheet" href="topbar.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="nav.css">
+    <style>
+        .immigration-container {
+            max-width: 1000px;
+        }
+
+        .info-section {
+            background-color: #2a2a2a;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            border-left: 5px solid #ff66fa;
+        }
+
+        .info-section h2 {
+            color: #ff66fa;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .info-section h3 {
+            color: #ff66fa;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .info-section p {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .requirement-card {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 4px;
+            border-left: 3px solid #ff66fa;
+        }
+
+        .requirement-card h4 {
+            color: #ff66fa;
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        .requirement-card p {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        .requirement-card ul {
+            margin: 10px 0;
+            padding-left: 20px;
+            color: #bbb;
+        }
+
+        .requirement-card li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 4px;
+            border-left: 3px solid #33cc33;
+        }
+
+        .step-number {
+            min-width: 50px;
+            width: 50px;
+            height: 50px;
+            background-color: #ff66fa;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #1a1a1a;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            color: #ff66fa;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        .step-content p {
+            margin: 0;
+            color: #bbb;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .visa-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .visa-card {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 4px;
+            border: 2px solid #ff66fa;
+        }
+
+        .visa-card h4 {
+            color: #ff66fa;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .visa-card .duration {
+            display: inline-block;
+            background-color: #ff66fa;
+            color: #1a1a1a;
+            padding: 4px 10px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .visa-card ul {
+            margin: 10px 0;
+            padding-left: 20px;
+            color: #bbb;
+            font-size: 14px;
+        }
+
+        .visa-card li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .contact-box {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 4px;
+            border-left: 3px solid #33cc33;
+            margin-top: 15px;
+        }
+
+        .contact-box h4 {
+            color: #ff66fa;
+            margin-top: 0;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .contact-box p {
+            margin: 8px 0;
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        .warning-box {
+            background-color: rgba(255, 51, 51, 0.1);
+            border-left: 4px solid #ff3333;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        .warning-box h4 {
+            color: #ff3333;
+            margin-top: 0;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .warning-box p {
+            color: #ccc;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .highlight-box {
+            background-color: rgba(255, 102, 250, 0.1);
+            border-left: 4px solid #ff66fa;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        .highlight-box p {
+            color: #ccc;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .faq-item {
+            background-color: #1a1a1a;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border-left: 3px solid #ff66fa;
+        }
+
+        .faq-item h4 {
+            color: #ff66fa;
+            margin-top: 0;
+            margin-bottom: 10px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .faq-item h4::before {
+            content: "▶ ";
+            margin-right: 8px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item h4.open::before {
+            transform: rotate(90deg);
+        }
+
+        .faq-answer {
+            color: #bbb;
+            display: none;
+            line-height: 1.6;
+        }
+
+        .faq-answer.open {
+            display: block;
+        }
+
+        .eligibility-form {
+            background-color: #1a1a1a;
+            padding: 25px;
+            border-radius: 4px;
+            border: 2px solid #33cc33;
+            margin: 20px 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #ff66fa;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .form-group select,
+        .form-group input[type="text"],
+        .form-group input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #2a2a2a;
+            color: #ccc;
+            border: 1px solid #ff66fa;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        .form-group select:focus,
+        .form-group input:focus {
+            outline: none;
+            border-color: #33cc33;
+            background-color: #333333;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .radio-option input[type="radio"] {
+            cursor: pointer;
+            width: 16px;
+            height: 16px;
+            accent-color: #ff66fa;
+        }
+
+        .radio-option label {
+            margin: 0;
+            cursor: pointer;
+            color: #ccc;
+            font-weight: normal;
+        }
+
+        .form-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background-color: #ff66fa;
+            color: #1a1a1a;
+        }
+
+        .btn-primary:hover {
+            background-color: #ff99fa;
+        }
+
+        .btn-secondary {
+            background-color: #2a2a2a;
+            color: #ccc;
+            border: 1px solid #ff66fa;
+        }
+
+        .btn-secondary:hover {
+            background-color: #3a3a3a;
+            color: #fff;
+        }
+
+        .results-box {
+            display: none;
+            background-color: #2a2a2a;
+            padding: 25px;
+            border-radius: 4px;
+            border-left: 5px solid #33cc33;
+            margin-top: 25px;
+        }
+
+        .results-box.success {
+            border-left-color: #33cc33;
+            background-color: rgba(51, 204, 51, 0.05);
+        }
+
+        .results-box.warning {
+            border-left-color: #ffcc33;
+            background-color: rgba(255, 204, 51, 0.05);
+        }
+
+        .results-box.error {
+            border-left-color: #ff3333;
+            background-color: rgba(255, 51, 51, 0.05);
+        }
+
+        .results-box h3 {
+            color: #ff66fa;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .results-box p {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .results-box ul {
+            color: #ccc;
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+
+        .results-box li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .eligible-badge {
+            display: inline-block;
+            background-color: #33cc33;
+            color: #1a1a1a;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .eligible-badge.partial {
+            background-color: #ffcc33;
+            color: #1a1a1a;
+        }
+
+        .eligible-badge.ineligible {
+            background-color: #ff3333;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="topbar">
+            <span class="pigflag">
+                <img src="./piggian_empire_flag.png">
+            </span>
+            <span class="domgovtitle">
+                <h1>Government of the Piggian Empire</h1>
+                <p>PorkySMP Official Portal</p>
+            </span>
+        </div>
+    </header>
+
+    <div class="flex" style="display: flex; flex-direction: row;">
+        <div class="navigation-sidebar">
+            <a href="index.html">
+                <div class="navitem">
+                    <span class="navitemtext">HOME</span>
+                </div>
+            </a>
+            <a href="government.html">
+                <div class="navitem">
+                    <span class="navitemtext">GOVERNMENT</span>
+                </div>
+            </a>
+            <a href="territories.html">
+                <div class="navitem">
+                    <span class="navitemtext">TERRITORIES</span>
+                </div>
+            </a>
+            <a href="laws.html">
+                <div class="navitem">
+                    <span class="navitemtext">LAWS & REGULATIONS</span>
+                </div>
+            </a>
+            <a href="travel.html">
+                <div class="navitem">
+                    <span class="navitemtext">TRAVEL ADVISORIES</span>
+                </div>
+            </a>
+            <a href="immigration.html">
+                <div class="navitem">
+                    <span class="navitemtext">IMMIGRATION</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="border">
+            <div class="content1">
+                <div class="immigration-container">
+                    <div class="info-section">
+                        <h2>Welcome to the Piggian Empire</h2>
+                        <p>The Department of Immigration and Citizenship manages all matters related to entry, residence, and citizenship in the Piggian Empire. We welcome individuals and families from around the world who wish to contribute to our growing nation.</p>
+                        <p>This guide provides comprehensive information about immigration procedures, visa requirements, and residency options available to foreign nationals.</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h2>Quick Eligibility Checker</h2>
+                        <p>Unsure if you qualify to immigrate? Use this quick questionnaire to get an initial assessment of your eligibility. This is not an official determination—consult with our embassy for formal eligibility decisions.</p>
+                        
+                        <div class="eligibility-form">
+                            <form id="eligibilityForm">
+                                <div class="form-group">
+                                    <label for="visaType">What visa type are you interested in?</label>
+                                    <select id="visaType" name="visaType" required>
+                                        <option value="">-- Select a visa type --</option>
+                                        <option value="tourist">Tourist Visa</option>
+                                        <option value="business">Business Visa</option>
+                                        <option value="work">Work Visa</option>
+                                        <option value="student">Student Visa</option>
+                                        <option value="family">Spouse/Family Visa</option>
+                                        <option value="permanent">Permanent Residency</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="employment">What is your current employment status?</label>
+                                    <select id="employment" name="employment" required>
+                                        <option value="">-- Select employment status --</option>
+                                        <option value="employed">Employed (Full-time)</option>
+                                        <option value="self-employed">Self-employed/Business Owner</option>
+                                        <option value="student">Student</option>
+                                        <option value="retired">Retired</option>
+                                        <option value="unemployed">Currently Unemployed</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="education">What is your highest level of education?</label>
+                                    <select id="education" name="education" required>
+                                        <option value="">-- Select education level --</option>
+                                        <option value="primary">Primary School</option>
+                                        <option value="secondary">Secondary/High School</option>
+                                        <option value="diploma">Diploma/Certificate</option>
+                                        <option value="bachelor">Bachelor's Degree</option>
+                                        <option value="master">Master's Degree</option>
+                                        <option value="phd">PhD/Doctorate</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="financial">Do you have sufficient financial means to support yourself during your stay?</label>
+                                    <div class="radio-group">
+                                        <div class="radio-option">
+                                            <input type="radio" id="financial-yes" name="financial" value="yes" required>
+                                            <label for="financial-yes">Yes</label>
+                                        </div>
+                                        <div class="radio-option">
+                                            <input type="radio" id="financial-no" name="financial" value="no">
+                                            <label for="financial-no">No</label>
+                                        </div>
+                                        <div class="radio-option">
+                                            <input type="radio" id="financial-unsure" name="financial" value="unsure">
+                                            <label for="financial-unsure">Unsure</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="criminal">Do you have any serious criminal convictions?</label>
+                                    <div class="radio-group">
+                                        <div class="radio-option">
+                                            <input type="radio" id="criminal-no" name="criminal" value="no" required>
+                                            <label for="criminal-no">No</label>
+                                        </div>
+                                        <div class="radio-option">
+                                            <input type="radio" id="criminal-yes" name="criminal" value="yes">
+                                            <label for="criminal-yes">Yes</label>
+                                        </div>
+                                        <div class="radio-option">
+                                            <input type="radio" id="criminal-pending" name="criminal" value="pending">
+                                            <label for="criminal-pending">Currently Under Review</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Which languages do you speak? (Select all that apply)</label>
+                                    <div style="margin-top: 10px;">
+                                        <div class="radio-option" style="margin-bottom: 10px;">
+                                            <input type="checkbox" id="language-english" name="language" value="english">
+                                            <label for="language-english">English</label>
+                                        </div>
+                                        <div class="radio-option" style="margin-bottom: 10px;">
+                                            <input type="checkbox" id="language-dutch" name="language" value="dutch">
+                                            <label for="language-dutch">Dutch</label>
+                                        </div>
+                                        <div class="radio-option">
+                                            <input type="checkbox" id="language-german" name="language" value="german">
+                                            <label for="language-german">German</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="sponsorship">Do you have a family member or employer who can sponsor you?</label>
+                                    <div class="radio-group">
+                                        <div class="radio-option">
+                                            <input type="radio" id="sponsorship-yes" name="sponsorship" value="yes" required>
+                                            <label for="sponsorship-yes">Yes</label>
+                                        </div>
+                                        <div class="radio-option">
+                                            <input type="radio" id="sponsorship-no" name="sponsorship" value="no">
+                                            <label for="sponsorship-no">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-buttons">
+                                    <button type="submit" class="btn btn-primary">Check Eligibility</button>
+                                    <button type="reset" class="btn btn-secondary">Clear Form</button>
+                                </div>
+                            </form>
+
+                            <div id="resultsContainer" class="results-box"></div>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h2>Visa Requirements by Citizenship</h2>
+                        <p>Entry requirements vary based on your country of origin. Citizens of friendly nations may be eligible for visa-free entry for tourism and short-term visits.</p>
+                        
+                        <div class="visa-types">
+                            <div class="visa-card">
+                                <h4>Tourist Visa</h4>
+                                <div class="duration">Up to 90 days</div>
+                                <p>For leisure travel and sightseeing within the Piggian Empire.</p>
+                                <ul>
+                                    <li>Valid passport (6+ months validity)</li>
+                                    <li>Return ticket or proof of onward travel</li>
+                                    <li>Proof of accommodation</li>
+                                    <li>Proof of financial means</li>
+                                </ul>
+                            </div>
+
+                            <div class="visa-card">
+                                <h4>Business Visa</h4>
+                                <div class="duration">Up to 30 days</div>
+                                <p>For business meetings, conferences, and commercial activities.</p>
+                                <ul>
+                                    <li>Valid passport (6+ months validity)</li>
+                                    <li>Letter of invitation from sponsoring company</li>
+                                    <li>Proof of business registration</li>
+                                    <li>Travel itinerary</li>
+                                </ul>
+                            </div>
+
+                            <div class="visa-card">
+                                <h4>Work Visa</h4>
+                                <div class="duration">Up to 2 years</div>
+                                <p>For employment in the Piggian Empire with a confirmed job offer.</p>
+                                <ul>
+                                    <li>Valid passport (12+ months validity)</li>
+                                    <li>Employment contract or letter of offer</li>
+                                    <li>Employer sponsorship</li>
+                                    <li>Proof of qualifications</li>
+                                    <li>Health clearance certificate</li>
+                                </ul>
+                            </div>
+
+                            <div class="visa-card">
+                                <h4>Student Visa</h4>
+                                <div class="duration">Duration of studies</div>
+                                <p>For study programs at accredited educational institutions.</p>
+                                <ul>
+                                    <li>Valid passport (12+ months validity)</li>
+                                    <li>Letter of acceptance from school/university</li>
+                                    <li>Proof of financial support</li>
+                                    <li>Health insurance documentation</li>
+                                </ul>
+                            </div>
+
+                            <div class="visa-card">
+                                <h4>Spouse/Family Visa</h4>
+                                <div class="duration">Up to 1 year (renewable)</div>
+                                <p>For family reunion with Piggian citizens or residents.</p>
+                                <ul>
+                                    <li>Valid passport (12+ months validity)</li>
+                                    <li>Marriage certificate or family relationship documentation</li>
+                                    <li>Proof of relationship with sponsor</li>
+                                    <li>Financial affidavit from sponsor</li>
+                                </ul>
+                            </div>
+
+                            <div class="visa-card">
+                                <h4>Permanent Residency</h4>
+                                <div class="duration">Indefinite</div>
+                                <p>For long-term residence and eventual pathway to citizenship.</p>
+                                <ul>
+                                    <li>Fulfilled temporary visa requirements</li>
+                                    <li>Proof of stable employment or income</li>
+                                    <li>Clean criminal record</li>
+                                    <li>Health clearance</li>
+                                    <li>Proficiency in local language (recommended)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h2>Immigration Application Process</h2>
+                        <p>Follow these steps to apply for a visa to the Piggian Empire:</p>
+
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Determine Visa Type</h4>
+                                <p>Identify which visa category matches your purpose of travel. Consult the visa requirements above or contact our embassy for guidance.</p>
+                            </div>
+                        </div>
+
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Gather Required Documents</h4>
+                                <p>Collect all necessary documents for your visa type, including valid passport, photos, supporting letters, and proof of financial means.</p>
+                            </div>
+                        </div>
+
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Complete Application Form</h4>
+                                <p>Fill out the official visa application form accurately. Applications can be submitted online through our portal or in person at an embassy.</p>
+                            </div>
+                        </div>
+
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Submit Application</h4>
+                                <p>Submit your completed application with all required documents to the nearest Piggian embassy or consulate, or use our online submission system.</p>
+                            </div>
+                        </div>
+
+                        <div class="process-step">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <h4>Processing & Interview</h4>
+                                <p>Your application will be reviewed and you may be called for an interview. Processing typically takes 2-4 weeks depending on visa type.</p>
+                            </div>
+                        </div>
+
+                        <div class="process-step">
+                            <div class="step-number">6</div>
+                            <div class="step-content">
+                                <h4>Receive Decision</h4>
+                                <p>You will be notified of the decision via email or through the visa status portal. Approved applicants can collect their visa or receive it by mail.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h2>Additional Requirements</h2>
+
+                        <h3>Health and Vaccinations</h3>
+                        <p>All applicants for extended stays (over 90 days) must provide proof of health insurance. Certain vaccinations may be required depending on your country of origin:</p>
+                        <div class="requirement-card">
+                            <h4>Recommended Vaccinations</h4>
+                            <ul>
+                                <li>Routine childhood vaccinations (up to date)</li>
+                                <li>Hepatitis A</li>
+                                <li>Typhoid</li>
+                                <li>Yellow Fever (if arriving from endemic countries)</li>
+                            </ul>
+                        </div>
+
+                        <h3>Background Check</h3>
+                        <p>All applicants must undergo a security background check. Criminal convictions or immigration violations may result in denial of entry.</p>
+
+                        <h3>Financial Requirements</h3>
+                        <p>Applicants must demonstrate sufficient financial means to support their stay. Minimum amounts vary by visa type but typically require 3-6 months of living expenses in bank statements.</p>
+
+                        <h3>Language Requirements</h3>
+                        <p>While not mandatory for short-term visits, proficiency in English, Dutch, or German is beneficial for longer-term residency and citizenship applications.</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h2>Pathway to Citizenship</h2>
+                        <p>Foreign residents may apply for citizenship after meeting the following requirements:</p>
+
+                        <div class="requirements-grid">
+                            <div class="requirement-card">
+                                <h4>Residence Duration</h4>
+                                <p>Minimum 5 years of continuous residency in the Piggian Empire, with at least 2 of those years as a permanent resident.</p>
+                            </div>
+
+                            <div class="requirement-card">
+                                <h4>Language Proficiency</h4>
+                                <p>Demonstrate proficiency in English, Dutch, or German through approved communication or educational qualification.</p>
+                            </div>
+
+                            <div class="requirement-card">
+                                <h4>Character Assessment</h4>
+                                <p>Pass a comprehensive character assessment. No serious criminal convictions or significant immigration violations within 5 years.</p>
+                            </div>
+
+                            <div class="requirement-card">
+                                <h4>Civics Knowledge</h4>
+                                <p>Pass a civics test demonstrating knowledge of Piggian history, government, laws, and rights/responsibilities.</p>
+                            </div>
+
+                            <div class="requirement-card">
+                                <h4>Permanent Employment</h4>
+                                <p>Maintain stable employment or self-employment with proof of consistent income throughout residency.</p>
+                            </div>
+
+                            <div class="requirement-card">
+                                <h4>Tax Compliance</h4>
+                                <p>Maintain good standing with tax obligations and demonstrate 5 years of tax compliance.</p>
+                            </div>
+                        </div>
+
+                        <div class="highlight-box">
+                            <p><strong>Note:</strong> Citizenship applications are reviewed individually. Exceptional individuals with significant contributions to society may be eligible for accelerated citizenship consideration.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h2>Rights and Responsibilities</h2>
+
+                        <h3>Rights of Residents</h3>
+                        <ul style="color: #ccc; padding-left: 20px; margin: 15px 0;">
+                            <li>Right to work in employment permitted under your visa</li>
+                            <li>Right to access public healthcare services</li>
+                            <li>Right to education (subject to visa limitations)</li>
+                            <li>Right to own property (with restrictions for non-citizens)</li>
+                            <li>Right to legal protection and due process</li>
+                        </ul>
+
+                        <h3>Responsibilities of Residents</h3>
+                        <ul style="color: #ccc; padding-left: 20px; margin: 15px 0;">
+                            <li>Comply with all local laws and regulations</li>
+                            <li>Pay taxes on income earned within the Piggian Empire</li>
+                            <li>Maintain valid visa and residency documentation</li>
+                            <li>Report changes in address or employment to authorities</li>
+                            <li>Respect cultural customs and traditions</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <h4>Important Notice</h4>
+                            <p>Violations of visa conditions, including working without authorization or overstaying, may result in deportation and a permanent ban from re-entry. Serious crimes will result in immediate removal from the country.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h2>Frequently Asked Questions</h2>
+
+                        <div class="faq-item">
+                            <h4 onclick="toggleFAQ(this)">How long does a visa application take?</h4>
+                            <div class="faq-answer">
+                                Processing times vary by visa type. Tourist visas typically take 5-10 business days, work visas 2-4 weeks, and permanent residency applications can take 2-3 months. Express processing is available for an additional fee.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <h4 onclick="toggleFAQ(this)">Can I extend my visa?</h4>
+                            <div class="faq-answer">
+                                Yes, most visa types can be extended before expiration. You must apply at least 30 days before your current visa expires. Extension fees apply and availability depends on your visa category.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <h4 onclick="toggleFAQ(this)">What if my visa application is denied?</h4>
+                            <div class="faq-answer">
+                                You have the right to receive written reasons for denial. You may appeal the decision or reapply after addressing the stated concerns. Consulate staff can provide guidance on next steps.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <h4 onclick="toggleFAQ(this)">Can family members join me on a work visa?</h4>
+                            <div class="faq-answer">
+                                Yes, spouse and dependent children can apply for dependent visas based on your work visa sponsorship. You must demonstrate sufficient financial means to support them.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <h4 onclick="toggleFAQ(this)">Do I need health insurance?</h4>
+                            <div class="faq-answer">
+                                Health insurance is required for stays longer than 90 days. Even for short-term visits, travel insurance is strongly recommended to cover medical emergencies and repatriation.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <h4 onclick="toggleFAQ(this)">Where can I apply for a visa?</h4>
+                            <div class="faq-answer">
+                                You can apply at any Piggian embassy or consulate worldwide, through our online portal, or at designated visa application centers. Contact information for your nearest office is available on our website.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h2>Contact Information</h2>
+                        <p>For questions or assistance with immigration matters, contact the Department of Immigration and Citizenship:</p>
+
+                        <div class="contact-box">
+                            <h4>Main Office</h4>
+                            <p><strong>Address:</strong> Immigration Department, Government Palace, Piggian Capital</p>
+                            <p><strong>Phone:</strong> +1 555 IMMI GRANT</p>
+                            <p><strong>Email:</strong> immigration@piggian-empire.gov</p>
+                            <p><strong>Website:</strong> www.piggian-immigration.gov</p>
+                        </div>
+
+                        <div class="contact-box">
+                            <h4>Embassy Services</h4>
+                            <p>Locate your nearest embassy or consulate through our online embassy finder tool. Visit our main website for current office hours and appointment scheduling.</p>
+                        </div>
+
+                        <p style="margin-top: 20px; color: #888; font-size: 13px;">
+                            <em>This information is current as of January 27, 2026. Immigration policies may change without notice. Always verify with official sources before making travel or relocation plans.</em>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            element.classList.toggle('open');
+            answer.classList.toggle('open');
+        }
+
+        // Eligibility Checker Logic
+        document.getElementById('eligibilityForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const visaType = document.getElementById('visaType').value;
+            const employment = document.getElementById('employment').value;
+            const education = document.getElementById('education').value;
+            const financial = document.querySelector('input[name="financial"]:checked').value;
+            const criminal = document.querySelector('input[name="criminal"]:checked').value;
+            const languages = Array.from(document.querySelectorAll('input[name="language"]:checked')).map(cb => cb.value);
+            const sponsorship = document.querySelector('input[name="sponsorship"]:checked').value;
+
+            let eligibilityScore = 0;
+            let issues = [];
+            let recommendations = [];
+            let status = 'eligible';
+
+            // Language check
+            if (languages.length === 0) {
+                recommendations.push('Speaking English, Dutch, or German will improve your chances of acceptance.');
+            } else {
+                eligibilityScore += 10 * languages.length;
+            }
+
+            // Criminal record check
+            if (criminal === 'yes' || criminal === 'pending') {
+                issues.push('Serious criminal convictions or pending charges may result in visa denial.');
+                status = 'ineligible';
+            } else {
+                eligibilityScore += 20;
+            }
+
+            // Financial means
+            if (financial === 'no') {
+                issues.push('Proof of sufficient financial means is required for all visa types.');
+                status = status === 'ineligible' ? 'ineligible' : 'partial';
+            } else if (financial === 'yes') {
+                eligibilityScore += 20;
+            } else {
+                eligibilityScore += 10;
+                recommendations.push('Prepare documentation of your financial situation before applying.');
+            }
+
+            // Visa-specific requirements
+            switch(visaType) {
+                case 'tourist':
+                    if (financial !== 'no') eligibilityScore += 15;
+                    if (sponsorship !== 'no') eligibilityScore += 5;
+                    recommendations.push('Tourist visas are the easiest to obtain. Ensure you have return travel plans.');
+                    break;
+
+                case 'business':
+                    if (employment === 'self-employed') eligibilityScore += 10;
+                    recommendations.push('You will need a letter of invitation from a sponsoring company.');
+                    break;
+
+                case 'work':
+                    if (employment === 'employed' || employment === 'self-employed') {
+                        eligibilityScore += 15;
+                    } else if (employment === 'unemployed') {
+                        issues.push('Work visas require a confirmed job offer from a Piggian employer.');
+                        status = status === 'ineligible' ? 'ineligible' : 'partial';
+                    }
+                    if (education !== 'primary' && education !== 'secondary') {
+                        eligibilityScore += 10;
+                    } else {
+                        recommendations.push('Work visa applicants typically have higher education requirements.');
+                    }
+                    if (sponsorship === 'yes') eligibilityScore += 10;
+                    break;
+
+                case 'student':
+                    if (employment === 'student') eligibilityScore += 15;
+                    if (financial === 'yes') eligibilityScore += 10;
+                    recommendations.push('You will need an acceptance letter from an accredited institution.');
+                    break;
+
+                case 'family':
+                    if (sponsorship === 'yes') {
+                        eligibilityScore += 20;
+                    } else {
+                        issues.push('Family/spouse visas require sponsorship from a Piggian citizen or resident.');
+                        status = 'ineligible';
+                    }
+                    break;
+
+                case 'permanent':
+                    if (employment === 'employed' || employment === 'self-employed' || employment === 'retired') {
+                        eligibilityScore += 15;
+                    } else {
+                        status = 'partial';
+                        recommendations.push('Permanent residency requires demonstrated stable employment or income.');
+                    }
+                    if (education !== 'primary' && education !== 'secondary') {
+                        eligibilityScore += 10;
+                    }
+                    if (languages.length === 0) {
+                        recommendations.push('Language skills are important for permanent residency.');
+                    }
+                    break;
+            }
+
+            // Display results
+            displayResults(visaType, eligibilityScore, status, issues, recommendations);
+        });
+
+        function displayResults(visaType, score, status, issues, recommendations) {
+            const resultsContainer = document.getElementById('resultsContainer');
+            let badgeClass = status === 'eligible' ? '' : status === 'partial' ? 'partial' : 'ineligible';
+            let badgeText = status === 'eligible' ? '✓ Potentially Eligible' : status === 'partial' ? '⚠ Further Assessment Needed' : '✗ Likely Ineligible';
+            
+            let visaTypeDisplay = document.querySelector(`#visaType option[value="${visaType}"]`).textContent;
+
+            let html = `
+                <div class="eligible-badge ${badgeClass}">${badgeText}</div>
+                <h3>Your Eligibility Assessment for ${visaTypeDisplay}</h3>
+                <p><strong>Eligibility Score: ${score}/100</strong></p>
+            `;
+
+            if (issues.length > 0) {
+                html += '<p style="margin-top: 20px; color: #ff3333; font-weight: 600;">Issues Found:</p><ul>';
+                issues.forEach(issue => {
+                    html += `<li style="color: #ff9999;">${issue}</li>`;
+                });
+                html += '</ul>';
+            }
+
+            if (recommendations.length > 0) {
+                html += '<p style="margin-top: 20px; color: #ff66fa; font-weight: 600;">Recommendations:</p><ul>';
+                recommendations.forEach(rec => {
+                    html += `<li>${rec}</li>`;
+                });
+                html += '</ul>';
+            }
+
+            html += `
+                <p style="margin-top: 20px; font-size: 13px; color: #888; border-top: 1px solid #444; padding-top: 15px;">
+                    <strong>Disclaimer:</strong> This assessment is based on general eligibility criteria and is not an official determination. 
+                    Please consult with our embassy for a formal eligibility review and to begin the official application process.
+                </p>
+            `;
+
+            resultsContainer.innerHTML = html;
+            resultsContainer.style.display = 'block';
+            resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    </script>
+</body>
+
+</html>
