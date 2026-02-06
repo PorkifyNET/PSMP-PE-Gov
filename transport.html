@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Piggian Empire - Public Transport</title>
+    <link rel="stylesheet" href="topbar.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="nav.css">
+    <style>
+        .transport-container {
+            max-width: 1200px;
+        }
+
+        .transport-header {
+            background-color: #2a2a2a;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+            border-left: 5px solid #ff66fa;
+        }
+
+        .transport-header h1 {
+            color: #ff66fa;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 32px;
+        }
+
+        .transport-header p {
+            color: #ccc;
+            line-height: 1.8;
+            margin: 10px 0;
+        }
+
+        .transport-map {
+            background-color: #2a2a2a;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+            border: 1px solid #ff66fa;
+            text-align: center;
+        }
+
+        .transport-map img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(255, 102, 250, 0.2);
+        }
+
+        .transport-map h3 {
+            color: #ff66fa;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .transport-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .transport-card {
+            background-color: #2a2a2a;
+            padding: 25px;
+            border-radius: 4px;
+            border-left: 5px solid #ff66fa;
+        }
+
+        .transport-card h3 {
+            color: #ff66fa;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .transport-card p {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .transport-card ul {
+            color: #bbb;
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .transport-card li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .info-box {
+            background-color: #1a1a1a;
+            border-left: 3px solid #33cc33;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .info-box h4 {
+            color: #33cc33;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-box p {
+            color: #bbb;
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        .fares-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #1a1a1a;
+            margin: 20px 0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .fares-table thead {
+            background-color: #2a2a2a;
+            border-bottom: 2px solid #ff66fa;
+        }
+
+        .fares-table th {
+            color: #ff66fa;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #ff66fa;
+        }
+
+        .fares-table td {
+            color: #ccc;
+            padding: 12px 15px;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .fares-table tr:last-child td {
+            border-bottom: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="topbar">
+            <span class="pigflag">
+                <img src="./piggian_empire_flag.png">
+            </span>
+            <span class="domgovtitle">
+                <h1>Government of the Piggian Empire</h1>
+                <p>PorkySMP Official Portal</p>
+            </span>
+        </div>
+    </header>
+
+    <div class="flex" style="display: flex; flex-direction: row;">
+        <div class="navigation-sidebar">
+            <a href="index.html">
+                <div class="navitem">
+                    <span class="navitemtext">HOME</span>
+                </div>
+            </a>
+            <a href="government.html">
+                <div class="navitem">
+                    <span class="navitemtext">GOVERNMENT</span>
+                </div>
+            </a>
+            <a href="territories.html">
+                <div class="navitem">
+                    <span class="navitemtext">TERRITORIES</span>
+                </div>
+            </a>
+            <a href="laws.html">
+                <div class="navitem">
+                    <span class="navitemtext">LAWS & REGULATIONS</span>
+                </div>
+            </a>
+            <a href="travel.html">
+                <div class="navitem">
+                    <span class="navitemtext">TRAVEL ADVISORIES</span>
+                </div>
+            </a>
+            <a href="immigration.html">
+                <div class="navitem">
+                    <span class="navitemtext">IMMIGRATION</span>
+                </div>
+            </a>
+            <a href="transport.html">
+                <div class="navitem_sel">
+                    <span class="navitemtext">PUBLIC TRANSPORT</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="border">
+            <div class="content1 transport-container">
+                <div class="transport-header">
+                    <h1>Public Transport System</h1>
+                    <p>The Piggian Empire maintains a comprehensive public transport network serving major cities and territories. Our system provides reliable, affordable, and efficient transportation for residents and visitors.</p>
+                </div>
+
+                <div class="transport-map">
+                    <h3>Transport Network Map</h3>
+                    <img src="./piggian_empire_public_transport.png" alt="Piggian Empire Public Transport Network">
+                </div>
+
+                <div class="transport-grid">
+                    <div class="transport-card">
+                        <h3>🚊 Rail Services</h3>
+                        <p>The primary rail network connects all major cities and territorial centers with frequent, comfortable service.</p>
+                        <ul>
+                            <li>Express trains for long-distance travel</li>
+                            <li>Local trains for regional connections</li>
+                            <li>Modern rolling stock with dining facilities</li>
+                            <li>Accessible stations and platforms</li>
+                        </ul>
+                    </div>
+
+                    <div class="transport-card">
+                        <h3>🚌 Bus Network</h3>
+                        <p>Extensive bus coverage provides flexible transportation throughout urban and rural areas.</p>
+                        <ul>
+                            <li>City buses with frequent schedules</li>
+                            <li>Intercity express services</li>
+                            <li>Real-time tracking and updates</li>
+                            <li>Wheelchair accessible vehicles</li>
+                        </ul>
+                    </div>
+
+                    <div class="transport-card">
+                        <h3>⛴️ Ferry Services</h3>
+                        <p>Connecting island territories and coastal regions with reliable maritime transport.</p>
+                        <ul>
+                            <li>Regular ferry schedules</li>
+                            <li>Vehicle and cargo transport</li>
+                            <li>Comfortable passenger facilities</li>
+                            <li>Weather-dependent service adjustments</li>
+                        </ul>
+                    </div>
+
+                    <div class="transport-card">
+                        <h3>🚕 Taxi & Ride Services</h3>
+                        <p>Licensed taxi operators and ride-sharing services available in major urban centers.</p>
+                        <ul>
+                            <li>Licensed and regulated operators</li>
+                            <li>Available 24/7 in cities</li>
+                            <li>Fixed rates on designated routes</li>
+                            <li>Credit card payment options</li>
+                        </ul>
+                    </div>
+
+                    <div class="transport-card">
+                        <h3>✈️ Air Transport</h3>
+                        <p>Internal flights connect distant territories and provide rapid inter-city travel.</p>
+                        <ul>
+                            <li>Scheduled internal flights</li>
+                            <li>Modern aircraft fleet</li>
+                            <li>Multiple airport terminals</li>
+                            <li>Competitive pricing</li>
+                        </ul>
+                    </div>
+
+                    <div class="transport-card">
+                        <h3>🚴 Cycling & Walking</h3>
+                        <p>Pedestrian and cycling infrastructure in cities supports eco-friendly commuting.</p>
+                        <ul>
+                            <li>Dedicated bicycle lanes</li>
+                            <li>Bike rental stations</li>
+                            <li>Pedestrian zones</li>
+                            <li>Safe, well-lit pathways</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="transport-card">
+                    <h3>Fares and Pricing</h3>
+                    <p>The following table shows standard fares for major transport modes. Children under 5 travel free, and students receive a 20% discount with valid ID.</p>
+                    
+                    <table class="fares-table">
+                        <thead>
+                            <tr>
+                                <th>Transport Type</th>
+                                <th>Standard Fare</th>
+                                <th>Monthly Pass</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>City Bus (Single)</td>
+                                <td>50 PE</td>
+                                <td>800 PE</td>
+                                <td>Unlimited city rides</td>
+                            </tr>
+                            <tr>
+                                <td>Local Train (Single)</td>
+                                <td>75 PE</td>
+                                <td>1,200 PE</td>
+                                <td>Single zone travel</td>
+                            </tr>
+                            <tr>
+                                <td>Express Train</td>
+                                <td>150-400 PE</td>
+                                <td>N/A</td>
+                                <td>Distance-dependent</td>
+                            </tr>
+                            <tr>
+                                <td>Ferry Services</td>
+                                <td>100-200 PE</td>
+                                <td>2,000 PE</td>
+                                <td>Varies by route</td>
+                            </tr>
+                            <tr>
+                                <td>Taxi Ride</td>
+                                <td>2 PE per km</td>
+                                <td>N/A</td>
+                                <td>Base fare 30 PE</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="info-box">
+                    <h4>📱 Mobile App & Information</h4>
+                    <p>Download the official Piggian Empire Transit app for real-time updates, journey planning, ticket booking, and service alerts. The app is available on iOS and Android platforms.</p>
+                </div>
+
+                <div class="info-box">
+                    <h4>🎫 Combined Tickets</h4>
+                    <p>Multi-modal passes are available for seamless travel across buses, trains, and ferries. Tourist passes offer unlimited travel for 3 or 7 days at special rates.</p>
+                </div>
+
+                <div class="info-box">
+                    <h4>♿ Accessibility</h4>
+                    <p>All public transport services comply with accessibility standards. Wheelchair access, audio announcements, and assistance for disabled passengers are available on all major routes.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
