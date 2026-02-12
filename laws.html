@@ -238,264 +238,27 @@
                 <h2>Imperial Laws & Regulations</h2>
                 <p>
                     This page provides consolidated access to public laws and regulations in force across the Piggian Empire.
-                    For historical authenticity: the legally authoritative publication is the <em>Imperial Gazette</em>.
                 </p>
 
-                <div class="law-note">
+                <div class="law-note" id="static-legal-note">
                     <strong>Legal notice:</strong> This portal is provided for public information. In case of discrepancies,
-                    the text as published in the <strong>Imperial Gazette</strong> (official register) prevails.
-                    <br><br>
-                    <strong>Language:</strong> The primary publication language is Imperial German. Dutch and English versions,
-                    where shown, are provided as non-binding public translations.
+                    the text as published in the <strong>Imperial Gazette</strong> prevails. Translations are non-binding.
                 </div>
 
                 <div class="searchbar">
-                    <input type="text" placeholder="Search by title, ID, keyword (e.g., IEA 1931:17, 'citizenship', 'tariff') — static demo">
-                    <button type="button" title="Static demo">Search</button>
+                    <input id="searchInput" type="text" placeholder="Search by title, ID, keyword (press Enter or click Search)">
+                    <button id="searchBtn" type="button">Search</button>
                 </div>
 
-                <div class="section">
-                    <h3>Hierarchy of Law</h3>
-                    <div class="card">
-                        <div class="law-section">
-                            <h4>Sources of Imperial Law</h4>
-                            <p>The legal order of the Empire is organized by authority and scope. Lower instruments may not conflict with higher instruments.</p>
-                            <ol>
-                                <li><strong>Imperial Basic Charter</strong> (constitutional law)</li>
-                                <li><strong>Imperial Acts</strong> (statutes passed by the Imperial Parliament)</li>
-                                <li><strong>Imperial Decrees</strong> (executive instruments issued under enabling authority)</li>
-                                <li><strong>Ministerial Regulations</strong> (technical rules issued by ministries)</li>
-                                <li><strong>Provincial Ordinances</strong> (local rules, consistent with imperial law)</li>
-                            </ol>
-                            <div class="law-code">
-                                Citation formats used on this portal:
-                                <br>
-                                IBC YYYY (Imperial Basic Charter) • IEA YYYY:NN (Imperial Act) • IED YYYY:NN (Imperial Decree)
-                                <br>
-                                MIR YYYY:NN (Ministerial Regulation) • PROV YYYY:NN (Provincial Ordinance)
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <h3>Browse</h3>
-                    <div class="card">
-                        <div class="law-grid">
-                            <div class="law-section">
-                                <h4>By Category</h4>
-                                <p>
-                                    <span class="law-pill"><strong>CRIM</strong> Criminal & Public Order</span>
-                                    <span class="law-pill"><strong>CIV</strong> Civil & Family</span>
-                                    <span class="law-pill"><strong>COMM</strong> Trade & Commerce</span>
-                                    <span class="law-pill"><strong>FIN</strong> Tax, Treasury & Banking</span>
-                                    <span class="law-pill"><strong>IMM</strong> Immigration & Citizenship</span>
-                                    <span class="law-pill"><strong>TRNS</strong> Transport & Roads</span>
-                                    <span class="law-pill"><strong>ENV</strong> Environment & Resources</span>
-                                    <span class="law-pill"><strong>DEF</strong> Defense & Security</span>
-                                    <span class="law-pill"><strong>LAB</strong> Labour & Social Protection</span>
-                                </p>
-                                <p style="margin-top: 10px;">
-                                    (Static page tip: you can turn each pill into an anchor link later, e.g. <code>#crim</code>, <code>#imm</code>.)
-                                </p>
-                            </div>
-
-                            <div class="law-section">
-                                <h4>By Authority</h4>
-                                <ul>
-                                    <li><strong>Imperial Parliament</strong> — Imperial Acts (IEA)</li>
-                                    <li><strong>Supreme Emperor / Imperial Chancellery</strong> — Imperial Decrees (IED)</li>
-                                    <li><strong>Imperial Ministries</strong> — Ministerial Regulations (MIR)</li>
-                                    <li><strong>Provincial Governments</strong> — Provincial Ordinances (PROV)</li>
-                                </ul>
-                                <p style="margin-top: 10px;">
-                                    Decrees and regulations generally cite an enabling Act or Charter article.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <h3>Key Consolidated Texts</h3>
-                    <div class="card">
-                        <table class="law-table">
-                            <thead>
-                                <tr>
-                                    <th style="width: 18%;">Identifier</th>
-                                    <th>Title</th>
-                                    <th style="width: 18%;">Status</th>
-                                    <th style="width: 18%;">Last amended</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><code>IBC 1921</code></td>
-                                    <td>Imperial Basic Charter (Consolidated)</td>
-                                    <td>In force</td>
-                                    <td>01 Jan 2026</td>
-                                </tr>
-                                <tr>
-                                    <td><code>IEA 1931:17</code></td>
-                                    <td>Citizenship & Nationality Act</td>
-                                    <td>In force</td>
-                                    <td>11 Jan 2026</td>
-                                </tr>
-                                <tr>
-                                    <td><code>IEA 1932:04</code></td>
-                                    <td>Public Order & Assembly Act</td>
-                                    <td>In force</td>
-                                    <td>11 Jan 2026</td>
-                                </tr>
-                                <tr>
-                                    <td><code>IEA 1933:09</code></td>
-                                    <td>Customs & Tariff Act (Trade & Port Controls)</td>
-                                    <td>In force</td>
-                                    <td>11 Jan 2026</td>
-                                </tr>
-                                <tr>
-                                    <td><code>MIR 2025:22</code></td>
-                                    <td>Porkana Canal Toll Schedule & Transit Rules</td>
-                                    <td>In force</td>
-                                    <td>19 Nov 2025</td>
-                                </tr>
-                                <tr>
-                                    <td><code>MIR 2026:03</code></td>
-                                    <td>Firearms, Restricted Items & Licensing Regulation</td>
-                                    <td>In force</td>
-                                    <td>10 Jan 2026</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <div class="law-note" style="margin-top: 12px;">
-                            <strong>Note:</strong> “Consolidated” means amendments have been incorporated into a single readable text.
-                            The amendment history remains recorded in Gazette notices.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <h3>Imperial Gazette</h3>
-                    <div class="card">
-                        <div class="law-section">
-                            <h4>Recent Publications</h4>
-                            <p>Official notices of enactment, amendments, repeals, and regulations (sample index).</p>
-
-                            <table class="law-table">
-                                <thead>
-                                    <tr>
-                                        <th style="width: 22%;">Gazette entry</th>
-                                        <th>Subject</th>
-                                        <th style="width: 22%;">Publication date</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><code>IG 2026/01-11</code></td>
-                                        <td>Amendment: Citizenship & Nationality Act (IEA 1931:17) — residency verification updates</td>
-                                        <td>11 Jan 2026</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>IG 2026/01-10</code></td>
-                                        <td>Regulation: Firearms, Restricted Items & Licensing (MIR 2026:03) — licensing categories clarified</td>
-                                        <td>10 Jan 2026</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>IG 2025/11-19</code></td>
-                                        <td>Canal Authority Notice: Porkana Canal toll schedule (MIR 2025:22)</td>
-                                        <td>19 Nov 2025</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                            <p style="margin-top: 10px;">
-                                (If you later add separate HTML pages, each Gazette row can link to a dedicated “notice” page.)
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <h3>Rights, Public Order, and Due Process</h3>
-                    <div class="card">
-                        <div class="law-grid">
-                            <div class="law-subsection">
-                                <h5>Rights & Protections</h5>
-                                <p>
-                                    Rights are set out in the <strong>Imperial Basic Charter</strong> and interpreted by the courts.
-                                    Limitations must be grounded in law, pursue a legitimate aim (public safety, order, rights of others),
-                                    and be proportionate.
-                                </p>
-                                <div class="law-code">
-                                    IBC 1921 — Principles (consolidated excerpt)
-                                    <br>
-                                    • equality before the law • due process • fair trial • lawful property protections
-                                </div>
-                            </div>
-
-                            <div class="law-subsection">
-                                <h5>Courts & Enforcement</h5>
-                                <p>
-                                    The Empire maintains a tiered court system (local, regional, supreme) and a professional constabulary.
-                                    Criminal penalties require lawful judgment; administrative measures require legal basis and review procedures.
-                                </p>
-                                <p style="margin-bottom: 0;">
-                                    Related instruments: <code>IEA 1932:04</code>, <code>IEA 1930:02</code> (Court Organization Act — index only).
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <h3>Resources, Trade, and Infrastructure</h3>
-                    <div class="card">
-                        <div class="law-grid">
-                            <div class="law-subsection">
-                                <h5>Environment & Resource Management</h5>
-                                <p>
-                                    Extraction and land use may require permitting and remediation. Imperial standards set minimum protections;
-                                    provinces may adopt stricter rules if consistent with imperial law.
-                                </p>
-                                <p style="margin-bottom: 0;">
-                                    Related instruments: <code>MIR 2024:14</code> (Mining Permits), <code>MIR 2023:07</code> (Water Stewardship).
-                                </p>
-                            </div>
-                            <div class="law-subsection">
-                                <h5>Trade & Commerce</h5>
-                                <p>
-                                    International trade is governed by customs law, licensing, and tariff schedules. Banking and currency matters
-                                    fall under the Imperial Treasury and licensed institutions.
-                                </p>
-                                <p style="margin-bottom: 0;">
-                                    Related instruments: <code>IEA 1933:09</code>, <code>MIR 2025:22</code>.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <h3>Amendments, Repeals, and Entry into Force</h3>
-                    <div class="card">
-                        <div class="law-section">
-                            <h4>How laws change</h4>
-                            <ul>
-                                <li><strong>Acts</strong> are enacted by Imperial Parliament and promulgated via the Imperial Gazette.</li>
-                                <li><strong>Decrees</strong> and <strong>regulations</strong> must cite enabling authority and are published in the Gazette.</li>
-                                <li><strong>Constitutional amendments</strong> require a supermajority and imperial ratification.</li>
-                            </ul>
-                            <p style="margin-top: 12px;"><strong>Entry into force:</strong> Unless otherwise specified, instruments enter into force upon Gazette publication.</p>
-                            <p><strong>Last Updated:</strong> January 2026</p>
-                        </div>
-                    </div>
+                <div id="laws-root">
+                    <!-- Dynamic content injected by js/laws.js -->
                 </div>
 
             </div>
         </div>
     </div>
 
+    <script src="js/laws.js"></script>
 </body>
 
 </html>

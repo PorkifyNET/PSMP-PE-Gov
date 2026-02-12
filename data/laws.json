@@ -1,0 +1,57 @@
+{
+  "hierarchy": {
+    "description": "The legal order of the Empire is organized by authority and scope. Lower instruments may not conflict with higher instruments.",
+    "items": [
+      { "title": "Imperial Basic Charter", "note": "constitutional law" },
+      { "title": "Imperial Acts", "note": "statutes passed by the Imperial Parliament" },
+      { "title": "Imperial Decrees", "note": "executive instruments" },
+      { "title": "Ministerial Regulations", "note": "technical rules" },
+      { "title": "Provincial Ordinances", "note": "local rules" }
+    ],
+    "citation": "Citation formats: IBC YYYY • IEA YYYY:NN • IED YYYY:NN • MIR YYYY:NN • PROV YYYY:NN"
+  },
+  "categories": [
+    { "id": "CRIM", "name": "Criminal & Public Order" },
+    { "id": "CIV", "name": "Civil & Family" },
+    { "id": "COMM", "name": "Trade & Commerce" },
+    { "id": "FIN", "name": "Tax, Treasury & Banking" },
+    { "id": "IMM", "name": "Immigration & Citizenship" },
+    { "id": "TRNS", "name": "Transport & Roads" },
+    { "id": "ENV", "name": "Environment & Resources" },
+    { "id": "DEF", "name": "Defense & Security" },
+    { "id": "LAB", "name": "Labour & Social Protection" }
+  ],
+  "authorities": [
+    { "title": "Imperial Parliament", "note": "Imperial Acts (IEA)" },
+    { "title": "Supreme Emperor / Imperial Chancellery", "note": "Imperial Decrees (IED)" },
+    { "title": "Imperial Ministries", "note": "Ministerial Regulations (MIR)" },
+    { "title": "Provincial Governments", "note": "Provincial Ordinances (PROV)" }
+  ],
+  "consolidated": [
+    { "id": "IBC 1921", "title": "Imperial Basic Charter (Consolidated)", "status": "In force", "lastAmended": "01 Jan 2026" },
+    { "id": "IEA 1931:17", "title": "Citizenship & Nationality Act", "status": "In force", "lastAmended": "11 Jan 2026" },
+    { "id": "IEA 1932:04", "title": "Public Order & Assembly Act", "status": "In force", "lastAmended": "11 Jan 2026" },
+    { "id": "IEA 1933:09", "title": "Customs & Tariff Act (Trade & Port Controls)", "status": "In force", "lastAmended": "11 Jan 2026" },
+    { "id": "MIR 2025:22", "title": "Porkana Canal Toll Schedule & Transit Rules", "status": "In force", "lastAmended": "19 Nov 2025" },
+    { "id": "MIR 2026:03", "title": "Firearms, Restricted Items & Licensing Regulation", "status": "In force", "lastAmended": "10 Jan 2026" }
+  ],
+  "note": "\u201cConsolidated\u201d means amendments have been incorporated into a single readable text. Amendment history remains in Gazette notices.",
+  "gazette": [
+    { "id": "IG 2026/01-11", "subject": "Amendment: Citizenship & Nationality Act (IEA 1931:17) — residency verification updates", "date": "11 Jan 2026" },
+    { "id": "IG 2026/01-10", "subject": "Regulation: Firearms, Restricted Items & Licensing (MIR 2026:03) — licensing categories clarified", "date": "10 Jan 2026" },
+    { "id": "IG 2025/11-19", "subject": "Canal Authority Notice: Porkana Canal toll schedule (MIR 2025:22)", "date": "19 Nov 2025" }
+  ],
+  "sections": [
+    { "title": "Rights & Protections", "text": "Rights are set out in the Imperial Basic Charter. Limitations must be grounded in law and be proportionate.", "code": "IBC 1921 — equality before the law • due process • fair trial • property protections" },
+    { "title": "Courts & Enforcement", "text": "Tiered courts (local, regional, supreme) and a professional constabulary. Criminal penalties require lawful judgment.", "code": "Related: IEA 1932:04, IEA 1930:02" }
+  ],
+  "amendments": {
+    "items": [
+      { "title": "Acts", "note": "Enacted by Imperial Parliament and promulgated via the Imperial Gazette." },
+      { "title": "Decrees and regulations", "note": "Must cite enabling authority and are published in the Gazette." },
+      { "title": "Constitutional amendments", "note": "Require a supermajority and imperial ratification." }
+    ],
+    "entry": "Unless otherwise specified, instruments enter into force upon Gazette publication.",
+    "updated": "January 2026"
+  }
+}
